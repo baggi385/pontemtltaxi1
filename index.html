@@ -95,6 +95,9 @@ nav ul{list-style:none;display:flex;gap:32px;align-items:center}
 nav a{color:var(--w);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;opacity:.55;transition:.2s}
 nav a:hover{opacity:1;color:var(--y)}
 .ncta{background:var(--y)!important;color:var(--b)!important;padding:8px 20px!important;border-radius:3px;opacity:1!important;font-weight:600!important}
+.nav-soon{display:flex!important;align-items:baseline;gap:5px}
+.nav-soon-tag{font-size:9px;letter-spacing:1px;color:var(--y);opacity:.85;text-transform:lowercase;font-style:italic}
+.mobile-nav .nav-soon-tag{font-size:12px;font-family:'DM Sans',sans-serif}
 .ncta:hover{background:var(--yd)!important}
 .lang-sw{display:flex;align-items:center;gap:7px}
 .lbtn{font-size:11px;letter-spacing:2px;font-weight:700;cursor:pointer;color:rgba(248,245,239,.35);transition:.2s}
@@ -929,6 +932,7 @@ footer li a:hover{color:var(--y)}
     <li><a href="#services" data-i="nav_svc">Services</a></li>
     <li><a href="#routes" data-i="nav_routes">Trajets</a></li>
     <li><a href="#booking" data-i="nav_book">Réserver</a></li>
+    <li><a href="/mariage.html" class="nav-soon"><span data-i="nav_mariage">Mariage</span> <span class="nav-soon-tag" data-i="nav_soon">(bientôt)</span></a></li>
     <li><a href="#reviews" data-i="nav_reviews">Avis</a></li>
     <li><a href="tel:+15147149576" class="ncta" data-i="nav_call">📞 Appeler</a></li>
     <li><div class="lang-sw"><span class="lbtn active" id="btn-fr" onclick="setLang('fr')">FR</span><span class="lsep">|</span><span class="lbtn" id="btn-en" onclick="setLang('en')">EN</span></div></li>
@@ -946,6 +950,7 @@ footer li a:hover{color:var(--y)}
     <a href="#services" onclick="closeMenu()" data-i="nav_svc">Services</a>
     <a href="#routes" onclick="closeMenu()" data-i="nav_routes">Trajets</a>
     <a href="#booking" onclick="closeMenu()" data-i="nav_book">Réserver</a>
+    <a href="/mariage.html" class="nav-soon"><span data-i="nav_mariage">Mariage</span> <span class="nav-soon-tag" data-i="nav_soon">(bientôt)</span></a>
     <a href="#reviews" onclick="closeMenu()" data-i="nav_reviews">Avis</a>
     <a href="tel:+15147149576" class="mobile-call" data-i="nav_call">📞 Appeler</a>
     <div class="mobile-lang">
@@ -2048,7 +2053,7 @@ var fr={
   cr_ms_name:"MESSENGER",cr_ms_desc:"Ecrivez-nous sur Facebook Messenger. Retrouvez nos disponibilites et avis.",
   cr_sms_name:"SMS / iMESSAGE",cr_sms_desc:"Envoyez un message texte directement depuis votre telephone. Simple et instantane.",
   cr_wa_name:"WHATSAPP",cr_wa_desc:"Chattez avec nous en temps reel. Envoyez votre localisation, photos de bagages.",
-  cr_ms_name:"MESSENGER",cr_ms_desc:"Ecrivez-nous sur Facebook Messenger. Retrouvez aussi nos disponibilites et avis.",nav_routes:"Trajets",nav_book:"R\u00e9server",nav_call:"\uD83D\uDCDE Appeler",
+  cr_ms_name:"MESSENGER",cr_ms_desc:"Ecrivez-nous sur Facebook Messenger. Retrouvez aussi nos disponibilites et avis.",nav_routes:"Trajets",nav_book:"R\u00e9server",nav_call:"\uD83D\uDCDE Appeler",nav_mariage:"Mariage",nav_soon:"(bient\u00f4t)",
   tag:"Rive-Sud \u2192 A\u00e9roport YUL",h1it:"votre chauffeur de confiance",
   sub:"Transferts a\u00e9roport depuis la Rive-Sud vers Montr\u00e9al-Trudeau YUL. Longueuil, Brossard, Chambly et plus. Disponible 24h/24, 7j/7.",
   btn1:"\u2708 R\u00e9server un trajet",btn2:"\uD83D\uDCDE 514 714-9576",
@@ -2137,7 +2142,7 @@ var fr={
   footer_copy:"\u00a9 2025 Ponté Taxi \u2014 Tous droits r\u00e9serv\u00e9s"};
 
 var en={
-  nav_svc:"Services",nav_routes:"Routes",nav_book:"Book",nav_call:"\uD83D\uDCDE Call Us",
+  nav_svc:"Services",nav_routes:"Routes",nav_book:"Book",nav_call:"\uD83D\uDCDE Call Us",nav_mariage:"Wedding",nav_soon:"(coming soon)",
   tag:"South Shore \u2192 YUL Airport",h1it:"your trusted driver",
   sub:"Airport transfers from the South Shore to Montreal-Trudeau YUL. Longueuil, Brossard, Chambly and more. Available 24/7.",
   btn1:"\u2708 Book a ride",btn2:"\uD83D\uDCDE 514 714-9576",
