@@ -1923,19 +1923,44 @@ function submitBooking(){
   var date=document.getElementById('f-date').value;
   var time=document.getElementById('f-time').value||'08:00';
   var flight=document.getElementById('f-flight').value.trim();
-  if(!S.city||!name||!tel||!date){alert(L==='en'?'Please fill in: City, Name, Phone and Date.':"Veuillez remplir : Ville, Nom, Téléphone et Date.");return;}
+
+  // Inline error — alerts get blocked on iOS Safari
+  var errEl=document.getElementById('fsub-error');
+  if(!errEl){
+    errEl=document.createElement('div');
+    errEl.id='fsub-error';
+    errEl.style.cssText='color:#ff6b6b;font-size:13px;margin-top:8px;padding:8px 12px;background:rgba(255,107,107,.1);border:1px solid rgba(255,107,107,.3);border-radius:4px;display:none';
+    var sbtn=document.getElementById('fsub-btn');
+    sbtn.parentNode.insertBefore(errEl,sbtn);
+  }
+  var cityOk=(S.city&&S.city.name)||ldMode;
+  if(!cityOk||!name||!tel||!date){
+    var missing=[];
+    if(!cityOk) missing.push(L==='en'?'City':'Ville');
+    if(!name) missing.push(L==='en'?'Name':'Nom');
+    if(!tel) missing.push(L==='en'?'Phone':'T\u00e9l\u00e9phone');
+    if(!date) missing.push('Date');
+    errEl.textContent=(L==='en'?'Please fill in: ':'Veuillez remplir : ')+missing.join(', ');
+    errEl.style.display='block';
+    errEl.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  errEl.style.display='none';
+
   var btn=document.getElementById('fsub-btn'),txt=document.getElementById('fsub-txt'),spin=document.getElementById('fspinner');
   btn.disabled=true;txt.textContent=L==='en'?'SENDING...':'ENVOI EN COURS...';spin.style.display='block';
-  var veh=getVeh(),total=S.city.base+veh.add;
+  var veh=getVeh();
+  var ldPrice=ldMode?(ldVehPick==='van'?parseFloat(ldPriceVan):parseFloat(ldPriceStd)):0;
+  var total=ldMode?ldPrice:(S.city?S.city.base+veh.add:veh.add);
   var ref='TS-'+Math.floor(1000+Math.random()*9000);S.ref=ref;
+  var cityName=S.city?S.city.name:(ldMode?ldRouteName:'');
   var dateStr=new Date(date+'T12:00').toLocaleDateString(L==='en'?'en-CA':'fr-CA',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
   setTimeout(function(){
     spin.style.display='none';btn.disabled=false;
-    txt.textContent=L==='en'?"✈ CONFIRM BOOKING":"✈ CONFIRMER LA RESERVATION";
-    // Store order for channel confirmation
-  _lastOrder = {ref:ref,name:name,tel:tel,city:S.city?S.city.name:(ldMode?ldRouteName:''),
-    veh:veh.name||'Berline',pax:S.pax,bag:S.bag,flight:flight,date:dateStr,time:time,total:total};
-  showConfirmOverlay(ref,name,tel,email,S.city.name,dateStr,time,veh,S.pax,S.bag,flight,total);
+    txt.textContent=L==='en'?'\u2708 CONFIRM BOOKING':'\u2708 CONFIRMER LA R\u00c9SERVATION';
+    _lastOrder={ref:ref,name:name,tel:tel,city:cityName,
+      veh:veh.name||'Berline',pax:S.pax,bag:S.bag,flight:flight,date:dateStr,time:time,total:total};
+    showConfirmOverlay(ref,name,tel,email,cityName,dateStr,time,veh,S.pax,S.bag,flight,total);
   },1200);
 }
 
