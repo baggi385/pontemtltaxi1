@@ -1659,22 +1659,29 @@ function buildZones(){
     var zN=L==='en'?z.nameEN:z.nameFR;
     var zP=L==='en'?z.priceEN:z.priceFR;
     var from=L==='en'?'from ':"a partir de ";
-    block.innerHTML='<div class="zone-header" onclick="toggleZone(\''+z.id+'\')">'
-      +'<div class="zone-dot" style="background:'+z.color+'"></div>'
+    // Build header div
+    var header=document.createElement('div');
+    header.className='zone-header';
+    header.setAttribute('onclick',"toggleZone('"+z.id+"')");
+    header.innerHTML='<div class="zone-dot" style="background:'+z.color+'"></div>'
       +'<span class="zone-name">'+zN+'</span>'
-      +"<span class=\"zone-ptag\">&nbsp;&middot; "+from+zP+"</span>"
+      +'<span class="zone-ptag">&nbsp;&middot; '+from+zP+'</span>'
       +'<span class="zone-cnt">'+z.cities.length+(L==='en'?' cities':' villes')+'</span>'
-      +"<span class=\"zone-arr\" id=\"za-"+z.id+"\">&#9662;</span>"
-      +'</div>'
-      +'<div class="zone-cities" id="zc-'+z.id+'"></div>';
-    var cDiv=block.querySelector('#zc-'+z.id);
-    z.cities.forEach(function(c){
+      +'<span class="zone-arr" id="za-'+z.id+'">&#9662;</span>';
+    // Build cities container DIRECTLY as element (not via innerHTML + querySelector)
+    var cDiv=document.createElement('div');
+    cDiv.className='zone-cities';
+    cDiv.id='zc-'+z.id;
+    z.cities.forEach(function(city){
       var card=document.createElement('div');
-      card.className='city-card';card.dataset.name=c.name;
-      card.innerHTML='<div style="font-size:18px">'+c.emoji+'</div><div class="cn">'+c.name+'</div><div class="cp">'+c.km+"km - "+c.base+'$</div>';
-      card.onclick=function(){selectCity(c,card);};
+      card.className='city-card';
+      card.dataset.name=city.name;
+      card.innerHTML='<div style="font-size:18px">'+city.emoji+'</div><div class="cn">'+city.name+'</div><div class="cp">'+city.km+"km - "+city.base+'$</div>';
+      card.onclick=function(){selectCity(city,card);};
       cDiv.appendChild(card);
     });
+    block.appendChild(header);
+    block.appendChild(cDiv);
     grid.appendChild(block);
   });
   if(S.city){
