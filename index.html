@@ -1926,10 +1926,10 @@ function setW(el){
 function submitBooking(){
   var name=document.getElementById('f-name').value.trim();
   var tel=document.getElementById('f-tel').value.trim();
-  var email=document.getElementById('f-email').value.trim();
   var date=document.getElementById('f-date').value;
   var time=document.getElementById('f-time').value||'08:00';
   var flight=document.getElementById('f-flight').value.trim();
+  var email='';
   var cityOk=(S.city&&S.city.name)||ldMode;
   if(!cityOk||!name||!tel||!date){
     alert(L==='en'?'Please fill in: City, Name, Phone and Date.':'Veuillez remplir : Ville, Nom, Téléphone et Date.');
