@@ -592,7 +592,7 @@ footer li a:hover{color:var(--y)}
 }
 
 /* ── VEHICLE TOGGLE ── */
-.veh-toggle{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px}
+.veh-toggle{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:14px}
 .vt-btn{flex:1;padding:12px 8px;border:2px solid rgba(0,0,0,.1);border-radius:10px;background:rgba(0,0,0,.05);cursor:pointer;text-align:center;transition:.2s;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:1px;color:#111}
 .vt-btn:hover{background:rgba(0,0,0,.1)}
 .vt-btn.sel{border-color:#111;background:#111;color:#F5C800}
@@ -747,6 +747,8 @@ footer li a:hover{color:var(--y)}
 
 /* Confort tooltip */
 .vt-btn#vt-cft .vt-note{font-size:8px;color:rgba(0,0,0,.4);font-family:'DM Sans',sans-serif;margin-top:2px;line-height:1.3}
+.vt-btn.soon{opacity:.55;cursor:default;position:relative;border-style:dashed}
+.vt-btn.soon:after{content:'bient\00f4t';display:block;font-size:7px;letter-spacing:1px;color:var(--y,#F5C800);font-family:'DM Sans',sans-serif;margin-top:2px;font-style:italic}
 
 /* ── CONTACT RAPIDE SECTION ── */
 .contact-rapide{background:#0d0d0d;padding:72px 56px;border-bottom:1px solid rgba(245,200,0,.08)}
@@ -933,6 +935,9 @@ footer li a:hover{color:var(--y)}
     <li><a href="#routes" data-i="nav_routes">Trajets</a></li>
     <li><a href="#booking" data-i="nav_book">Réserver</a></li>
     <li><a href="/mariage.html" class="nav-soon"><span data-i="nav_mariage">Mariage</span> <span class="nav-soon-tag" data-i="nav_soon">(bientôt)</span></a></li>
+    <li><a href="/elite.html" class="nav-soon"><span data-i="nav_elite">SUV Elite</span> <span class="nav-soon-tag" data-i="nav_soon">(bientôt)</span></a></li>
+    <li><a href="/xxl.html" class="nav-soon"><span data-i="nav_xxl">Grand Confort</span> <span class="nav-soon-tag" data-i="nav_soon">(bientôt)</span></a></li>
+    <li><a href="/confort.html" class="nav-soon"><span data-i="nav_confort">Confort</span> <span class="nav-soon-tag" data-i="nav_soon">(bientôt)</span></a></li>
     <li><a href="#reviews" data-i="nav_reviews">Avis</a></li>
     <li><a href="tel:+15147149576" class="ncta" data-i="nav_call">📞 Appeler</a></li>
     <li><div class="lang-sw"><span class="lbtn active" id="btn-fr" onclick="setLang('fr')">FR</span><span class="lsep">|</span><span class="lbtn" id="btn-en" onclick="setLang('en')">EN</span></div></li>
@@ -951,6 +956,9 @@ footer li a:hover{color:var(--y)}
     <a href="#routes" onclick="closeMenu()" data-i="nav_routes">Trajets</a>
     <a href="#booking" onclick="closeMenu()" data-i="nav_book">Réserver</a>
     <a href="/mariage.html" class="nav-soon"><span data-i="nav_mariage">Mariage</span> <span class="nav-soon-tag" data-i="nav_soon">(bientôt)</span></a>
+    <a href="/elite.html" class="nav-soon"><span data-i="nav_elite">SUV Elite</span> <span class="nav-soon-tag" data-i="nav_soon">(bientôt)</span></a>
+    <a href="/xxl.html" class="nav-soon"><span data-i="nav_xxl">Grand Confort</span> <span class="nav-soon-tag" data-i="nav_soon">(bientôt)</span></a>
+    <a href="/confort.html" class="nav-soon"><span data-i="nav_confort">Confort</span> <span class="nav-soon-tag" data-i="nav_soon">(bientôt)</span></a>
     <a href="#reviews" onclick="closeMenu()" data-i="nav_reviews">Avis</a>
     <a href="tel:+15147149576" class="mobile-call" data-i="nav_call">📞 Appeler</a>
     <div class="mobile-lang">
@@ -1300,12 +1308,17 @@ footer li a:hover{color:var(--y)}
         <span class="vt-icon">✨</span>
         CONFORT
         <div class="vt-price" id="vtp-cft">—</div>
-        <div class="vt-note">Interieur premium · +10$</div>
+        <div class="vt-note">Intérieur premium · +10$</div>
       </div>
       <div class="vt-btn" id="vt-van" onclick="pickVeh('van')">
         <span class="vt-icon">🚐</span>
-        MINIVAN
+        GRAND CONFORT<div style="font-size:9px;opacity:.6">(XXL)</div>
         <div class="vt-price" id="vtp-van">—</div>
+      </div>
+      <div class="vt-btn soon" id="vt-elite" onclick="void(0)">
+        <span class="vt-icon">🚙</span>
+        SUV ELITE
+        <div class="vt-price" style="opacity:.4">—</div>
       </div>
     </div>
     <!-- BABY SEAT -->
@@ -1789,7 +1802,7 @@ function toggleBS(){
 function getVeh(){
   var p=S.pax,b=S.bag;
   if(p>=3||b>=3||vPick==='van'){
-    return{icon:'🚐',name:'MINIVAN',add:20,badge:'+20$',isVan:true,isPremium:false,
+    return{icon:'🚐',name:L==='en'?'GRAND CONFORT (XXL)':'GRAND CONFORT (XXL)',add:20,badge:'+20$',isVan:true,isPremium:false,
       desc:(p||3)+(L==='en'?' pass. - extra space':' pass. - grand espace')};
   }
   if(vPick==='cft'){
@@ -2071,7 +2084,7 @@ var fr={
   cr_ms_name:"MESSENGER",cr_ms_desc:"Écrivez-nous sur Facebook Messenger. Retrouvez nos disponibilités et avis.",
   cr_sms_name:"SMS / iMESSAGE",cr_sms_desc:"Envoyez un message texte directement depuis votre téléphone. Simple et instantané.",
   cr_wa_name:"WHATSAPP",cr_wa_desc:"Chattez avec nous en temps réel. Envoyez votre localisation, photos de bagages.",
-  cr_ms_name:"MESSENGER",cr_ms_desc:"Écrivez-nous sur Facebook Messenger. Retrouvez aussi nos disponibilités et avis.",nav_routes:"Trajets",nav_book:"R\u00e9server",nav_call:"\uD83D\uDCDE Appeler",nav_mariage:"Mariage",nav_soon:"(bient\u00f4t)",
+  cr_ms_name:"MESSENGER",cr_ms_desc:"Écrivez-nous sur Facebook Messenger. Retrouvez aussi nos disponibilités et avis.",nav_routes:"Trajets",nav_book:"R\u00e9server",nav_call:"\uD83D\uDCDE Appeler",nav_mariage:"Mariage",nav_elite:"SUV Elite",nav_xxl:"Grand Confort",nav_confort:"Confort",nav_soon:"(bient\u00f4t)",
   tag:"Rive-Sud \u2192 A\u00e9roport YUL",h1it:"votre chauffeur de confiance",
   sub:"Transferts a\u00e9roport depuis la Rive-Sud vers Montr\u00e9al-Trudeau YUL. Longueuil, Brossard, Chambly et plus. Disponible 24h/24, 7j/7.",
   btn1:"\u2708 R\u00e9server un trajet",btn2:"\uD83D\uDCDE 514 714-9576",
@@ -2160,7 +2173,7 @@ var fr={
   footer_copy:"\u00a9 2026 Ponté Taxi \u2014 Tous droits r\u00e9serv\u00e9s"};
 
 var en={
-  nav_svc:"Services",nav_routes:"Routes",nav_book:"Book",nav_call:"\uD83D\uDCDE Call Us",nav_mariage:"Wedding",nav_soon:"(coming soon)",
+  nav_svc:"Services",nav_routes:"Routes",nav_book:"Book",nav_call:"\uD83D\uDCDE Call Us",nav_mariage:"Wedding",nav_elite:"SUV Elite",nav_xxl:"Grand Confort",nav_confort:"Confort",nav_soon:"(coming soon)",
   tag:"South Shore \u2192 YUL Airport",h1it:"your trusted driver",
   sub:"Airport transfers from the South Shore to Montreal-Trudeau YUL. Longueuil, Brossard, Chambly and more. Available 24/7.",
   btn1:"\u2708 Book a ride",btn2:"\uD83D\uDCDE 514 714-9576",
