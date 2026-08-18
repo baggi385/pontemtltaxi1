@@ -1315,10 +1315,10 @@ footer li a:hover{color:var(--y)}
         GRAND CONFORT<div style="font-size:9px;opacity:.6">(XXL)</div>
         <div class="vt-price" id="vtp-van">—</div>
       </div>
-      <div class="vt-btn soon" id="vt-elite" onclick="void(0)">
+      <div class="vt-btn" id="vt-elite" onclick="pickVeh('elite')">
         <span class="vt-icon">🚙</span>
         SUV ELITE
-        <div class="vt-price" style="opacity:.4">—</div>
+        <div class="vt-price" id="vtp-elite">—</div>
       </div>
     </div>
     <!-- BABY SEAT -->
@@ -1774,12 +1774,13 @@ var _manualVan=false;
 function pickVeh(t){
   updateProgress(3);
   if(t==='std'&&(S.pax>=3||S.bag>=3))t='van';
+  if(t==='elite'&&(S.pax>=7))t='van';
   _manualVan=(t==='van');
   vPick=t;
-  var bs=document.getElementById('vt-std');
-  var bv=document.getElementById('vt-van');
-  if(bs)bs.classList.toggle('sel',t==='std');
-  if(bv)bv.classList.toggle('sel',t==='van');
+  ['std','cft','van','elite'].forEach(function(x){
+    var el=document.getElementById('vt-'+x);
+    if(el)el.classList.toggle('sel',x===t);
+  });
   if(S.city)recalc();
 }
 
@@ -1801,6 +1802,10 @@ function toggleBS(){
 
 function getVeh(){
   var p=S.pax,b=S.bag;
+  if(vPick==='elite'&&p<7){
+    return{icon:'🚙',name:'SUV ELITE',add:95,badge:'+95$',isVan:false,isPremium:true,
+      desc:L==='en'?'1-6 pass. - premium SUV':'1-6 pass. - SUV premium'};
+  }
   if(p>=3||b>=3||vPick==='van'){
     return{icon:'🚐',name:L==='en'?'GRAND CONFORT (XXL)':'GRAND CONFORT (XXL)',add:20,badge:'+20$',isVan:true,isPremium:false,
       desc:(p||3)+(L==='en'?' pass. - extra space':' pass. - grand espace')};
@@ -1873,13 +1878,13 @@ function recalc(){
   if(vtog)vtog.style.display='flex';
   if(brow)brow.style.display='flex';
   // Auto-switch to van if needed
-  if((S.pax>=3||S.bag>=3)&&vPick!=='van'){
+  if((S.pax>=3||S.bag>=3)&&vPick!=='van'&&vPick!=='elite'){
     vPick='van';
     var _bs=document.getElementById('vt-std');var _bv=document.getElementById('vt-van');
     if(_bs)_bs.classList.remove('sel');if(_bv)_bv.classList.add('sel');
   }else if(S.pax<3&&S.bag<3&&vPick==='van'&&!_manualVan){
     vPick='std';
-    ['std','cft','van'].forEach(function(x){var el=document.getElementById('vt-'+x);if(el)el.classList.toggle('sel',x==='std');});
+    ['std','cft','van','elite'].forEach(function(x){var el=document.getElementById('vt-'+x);if(el)el.classList.toggle('sel',x==='std');});
   }
   // Calculate price AFTER switch
   veh=getVeh();
@@ -1888,16 +1893,19 @@ function recalc(){
   var vtpS=document.getElementById('vtp-std');
   var vtpC=document.getElementById('vtp-cft');
   var vtpV=document.getElementById('vtp-van');
+  var vtpE=document.getElementById('vtp-elite');
   if(vtpS)vtpS.textContent=base+'$';
   if(vtpC)vtpC.textContent=(base+10)+'$';
   if(vtpV)vtpV.textContent=(base+20)+'$';
+  if(vtpE)vtpE.textContent=(base+95)+'$';
   var _rc=document.getElementById('r-city');if(_rc)_rc.textContent=S.city.name;
   var _rd=document.getElementById('r-dist');if(_rd)_rd.textContent=S.city.km;
   var _rdu=document.getElementById('r-dur');if(_rdu)_rdu.textContent=S.city.min;
   var _rp=document.getElementById('r-price');if(_rp)_rp.textContent=total+'$';
   var _rn=document.getElementById('r-note');
   if(_rn){
-    if(veh.isVan)_rn.textContent=base+'$ + 20$ (minivan) = '+total+'$ \u2014 Minivan';
+    if(veh.isPremium&&veh.icon==='🚙')_rn.textContent=base+'$ + 95$ (SUV Elite) = '+total+'$ \u2014 SUV Elite';
+    else if(veh.isVan)_rn.textContent=base+'$ + 20$ (minivan) = '+total+'$ \u2014 Minivan';
     else _rn.textContent=(L==='en'?'Fixed rate - '+base+'$ - Berline':'Tarif fixe - '+base+'$ - Berline');
   }
   if(rb)rb.style.display='block';if(cf)cf.style.display='block';
@@ -2264,6 +2272,7 @@ return {fr:fr,en:en};
 
 function setLang(lang){
   L=lang;document.documentElement.lang=lang;
+  try{ localStorage.setItem('ponte_lang', lang); }catch(e){}
   document.getElementById('btn-fr').classList.toggle('active',lang==='fr');
   document.getElementById('btn-en').classList.toggle('active',lang==='en');
   var mf=document.getElementById('mbtn-fr');var me=document.getElementById('mbtn-en');
@@ -2370,6 +2379,11 @@ buildMainStamps();
 if(_fd)_fd.addEventListener('change',calcTravel);
 var _ft=document.getElementById('f-time');if(_ft)_ft.addEventListener('change',calcTravel);
 buildZones();
+
+try{
+  var _savedLang = localStorage.getItem('ponte_lang');
+  if(_savedLang === 'en') setLang('en');
+}catch(e){}
 
 /* CHATBOT REMOVED */
 

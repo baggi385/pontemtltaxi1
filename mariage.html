@@ -610,6 +610,7 @@ var en = {
 
 function setLang(lang){
   L = lang;
+  try{ localStorage.setItem('ponte_lang', lang); }catch(e){}
   document.documentElement.lang = lang;
   document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
   document.getElementById('btn-en').classList.toggle('active', lang==='en');
@@ -695,7 +696,9 @@ function toggleFaq(item){
   if(!isOpen) item.classList.add('open');
 }
 
-setLang('fr');
+var _savedLang='fr';
+try{ _savedLang = localStorage.getItem('ponte_lang') || 'fr'; }catch(e){}
+setLang(_savedLang);
 </script>
 
 </body>

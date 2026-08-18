@@ -92,6 +92,44 @@ section{padding:80px 24px}
 .cb-btn.gold{background:var(--b)!important;border-color:var(--y);color:var(--y)}
 .cb-dot{width:6px;height:6px;border-radius:50%;background:var(--y)}
 
+/* ── BOOKING FORM ── */
+.bk-section{padding:70px 24px;background:var(--b)!important}
+.bk-inner{max-width:600px;margin:0 auto}
+.bk-route-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:28px 0}
+.bk-route{border:1.5px solid var(--line);border-radius:2px;padding:14px 12px;text-align:center;cursor:pointer;transition:.2s;background:var(--b)!important}
+.bk-route.sel{border-color:var(--y);background:rgba(245,200,0,.06)!important}
+.bk-route-name{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1px;color:var(--w);margin-bottom:4px}
+.bk-route-price{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--y);font-weight:600}
+.bk-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.bk-form-row.full{grid-template-columns:1fr}
+.bk-fgroup label{display:block;font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:2px;color:var(--wd);margin-bottom:6px}
+.bk-fgroup input{width:100%;background:rgba(255,255,255,.06)!important;border:1px solid var(--line);border-radius:2px;padding:12px 14px;color:var(--w)!important;font-family:'DM Sans',sans-serif;font-size:14px}
+.bk-fgroup input:focus{outline:none;border-color:var(--y)}
+.bk-error{color:#ff6b6b;font-size:12px;margin-top:10px;padding:10px 14px;background:rgba(255,107,107,.08);border:1px solid rgba(255,107,107,.25);border-radius:2px;display:none}
+.bk-submit{width:100%;background:var(--y)!important;color:var(--b)!important;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px;padding:16px;border:none;border-radius:2px;cursor:pointer;margin-top:16px;transition:.2s;position:relative}
+.bk-submit:disabled{opacity:.6;cursor:default}
+.bk-spinner{display:none;width:16px;height:16px;border:2px solid rgba(7,9,15,.3);border-top-color:var(--b);border-radius:50%;animation:bkspin .7s linear infinite;position:absolute;right:18px;top:50%;margin-top:-8px}
+@keyframes bkspin{to{transform:rotate(360deg)}}
+.bk-overlay{display:none;position:fixed;inset:0;background:rgba(7,9,15,.9)!important;z-index:500;align-items:flex-start;justify-content:center;padding:24px;backdrop-filter:blur(8px);overflow-y:auto}
+.bk-overlay.show{display:flex}
+.bk-card{background:#0d0f16!important;border:1px solid var(--line);border-radius:4px;max-width:420px;width:100%;padding:32px 28px;margin-top:40px}
+.bk-check{font-size:36px;text-align:center;margin-bottom:10px}
+.bk-card h3{font-family:'Cormorant Garamond',serif;font-size:24px;text-align:center;margin-bottom:6px;font-weight:600}
+.bk-card p{font-size:12px;color:var(--wd);text-align:center;margin-bottom:20px;line-height:1.6}
+.bk-channels{display:flex;gap:8px;margin-bottom:16px}
+.bk-channels button{flex:1;padding:11px;border-radius:2px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:1px;cursor:pointer;border:1.5px solid rgba(37,211,102,.25);background:rgba(37,211,102,.15)!important;color:#25d366}
+.bk-channels button.fb{border-color:rgba(24,119,242,.3);background:rgba(24,119,242,.18)!important;color:#4a90d9}
+.bk-ref{text-align:center;padding:14px;background:rgba(245,200,0,.04)!important;border:1px solid var(--line);border-radius:2px;margin-bottom:14px}
+.bk-ref-lbl{font-size:10px;letter-spacing:2px;color:var(--wdd);margin-bottom:4px}
+.bk-ref-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--y);letter-spacing:2px}
+.bk-summary{font-size:13px;color:var(--wd);line-height:2;margin-bottom:14px}
+.bk-summary strong{color:var(--w)}
+.bk-price-box{text-align:center;padding:16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:16px;background:transparent!important}
+.bk-price{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--y);font-weight:600}
+.bk-price-note{font-size:11px;color:var(--wdd);margin-top:4px}
+.bk-pay-btn{display:block;text-align:center;background:var(--y)!important;color:var(--b)!important;border-radius:2px;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px;text-decoration:none;margin-bottom:10px}
+.bk-close-btn{display:block;width:100%;text-align:center;background:var(--b)!important;border:1px solid rgba(255,255,255,.18);color:var(--wd);border-radius:2px;padding:12px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1px;cursor:pointer}
+
 /* ── CLOSING ── */
 .closing{padding:80px 24px;text-align:center;background:var(--b)!important}
 .closing-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(28px,5vw,52px);color:var(--w);line-height:1.2;max-width:600px;margin:0 auto 40px}
@@ -147,8 +185,7 @@ footer .f-copy{font-size:11px;color:var(--wdd)}
   <p class="hero-sub" data-i="h_sub">Jusqu'à 4 passagers · Intérieur premium · Prix fixe garanti</p>
   <p class="hero-tagline" data-i="h_tagline">CONFORT BY PONTÉ TAXI</p>
   <div class="hero-cta-row">
-    <a id="lnk-hero-wa" href="#" class="btn-primary" data-i="h_wa">RÉSERVER SUR WHATSAPP</a>
-    <a id="lnk-hero-sms" href="#" class="btn-primary" data-i="h_sms">SMS</a>
+    <button type="button" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth',block:'start'});" class="btn-primary" data-i="h_book_now">RÉSERVER MAINTENANT</button>
     <a href="tel:+15147149576" class="btn-ghost" data-i="h_call">APPELER</a>
     <a href="https://m.me/pontemtltaxi" class="btn-ghost" data-i="h_ms">MESSENGER</a>
     <button type="button" onclick="document.getElementById('tarifs').scrollIntoView({behavior:'smooth',block:'start'});" class="btn-ghost" data-i="h_tarifs">VOIR LES TARIFS</button>
@@ -164,6 +201,7 @@ footer .f-copy{font-size:11px;color:var(--wdd)}
     <span class="sec-eyebrow" data-i="w_eyebrow">POURQUOI CHOISIR CONFORT</span>
     <h2 class="sec-title" data-i="w_title">Le juste <em>équilibre</em></h2>
     <p class="sec-lede" data-i="w_lede">Entre la simplicité de la Berline et le prestige du SUV Elite, Confort offre un intérieur premium sans dépasser votre budget.</p>
+    <p class="sec-lede" style="margin-top:16px" data-i="w_lede2">Confort n'est pas simplement une Berline avec un supplément — c'est une catégorie de véhicules à part entière, sélectionnés pour leur intérieur haut de gamme, leur silence de roulement et leur confort de conduite. Sièges en cuir ou similicuir, climatisation zonale, finition soignée : chaque détail est pensé pour un trajet agréable, que ce soit pour une réunion d'affaires, un transfert aéroport, ou simplement parce que vous méritez mieux qu'un véhicule standard.</p>
     <div class="why-grid">
       <div class="why-item">
         <div class="why-icon">💼</div>
@@ -204,17 +242,90 @@ footer .f-copy{font-size:11px;color:var(--wdd)}
 
 <div class="sec-divider"></div>
 
-<!-- CALLBACK 1 -->
-<div class="cb-section">
-  <div class="cb-inner">
-    <div class="cb-title" data-i="cb_title">Réservez votre Confort</div>
-    <div class="cb-sub" data-i="cb_sub">Confirmation en moins de 15 minutes — prix fixe, aucune surprise</div>
-    <div class="cb-row">
-      <a href="tel:+15147149576" class="cb-btn" data-i="cb_call"><span class="cb-dot"></span>CALL</a>
-      <a id="lnk-cb1-sms" href="#" class="cb-btn gold" data-i="cb_sms"><span class="cb-dot"></span>SMS</a>
-      <a id="lnk-cb1-wa" href="#" class="cb-btn" data-i="cb_wa"><span class="cb-dot"></span>WHATSAPP</a>
-      <a href="https://m.me/pontemtltaxi" class="cb-btn" data-i="cb_ms"><span class="cb-dot"></span>MESSENGER</a>
+<!-- BOOKING FORM -->
+<section class="bk-section" id="booking">
+  <div class="bk-inner">
+    <span class="sec-eyebrow" data-i="bk_eyebrow" style="text-align:center;display:block">RÉSERVATION</span>
+    <h2 class="sec-title" style="text-align:center" data-i="bk_title">Réservez votre <em>Confort</em></h2>
+    <p class="sec-lede" style="text-align:center" data-i="bk_lede">Choisissez votre trajet, indiquez vos coordonnées, et confirmez en un instant.</p>
+
+    <div class="bk-route-grid" id="bk-route-grid">
+      <div class="bk-route sel" data-route="downtown" data-price="70" onclick="bkPickRoute(this)">
+        <div class="bk-route-name" data-i="bk_r_downtown">Centre-Ville → YUL</div>
+        <div class="bk-route-price">70$</div>
+      </div>
+      <div class="bk-route" data-route="zone1" data-price="80" onclick="bkPickRoute(this)">
+        <div class="bk-route-name" data-i="bk_r_z1">Rive-Sud — Zone 1</div>
+        <div class="bk-route-price">80$</div>
+      </div>
+      <div class="bk-route" data-route="zone2" data-price="95" onclick="bkPickRoute(this)">
+        <div class="bk-route-name" data-i="bk_r_z2">Rive-Sud — Zone 2</div>
+        <div class="bk-route-price">90-100$</div>
+      </div>
+      <div class="bk-route" data-route="zone3" data-price="120" onclick="bkPickRoute(this)">
+        <div class="bk-route-name" data-i="bk_r_z3">Rive-Sud — Zone 3</div>
+        <div class="bk-route-price">110-130$</div>
+      </div>
+      <div class="bk-route" data-route="zone4" data-price="145" onclick="bkPickRoute(this)">
+        <div class="bk-route-name" data-i="bk_r_z4">Rive-Sud — Zone 4</div>
+        <div class="bk-route-price">145$</div>
+      </div>
+      <div class="bk-route" data-route="tremblant" data-price="280" onclick="bkPickRoute(this)">
+        <div class="bk-route-name" data-i="bk_r_trbl">Mont-Tremblant</div>
+        <div class="bk-route-price">280$</div>
+      </div>
+      <div class="bk-route" data-route="ottawa" data-price="440" onclick="bkPickRoute(this)">
+        <div class="bk-route-name" data-i="bk_r_ott">Ottawa</div>
+        <div class="bk-route-price">440$</div>
+      </div>
+      <div class="bk-route" data-route="quebec" data-price="440" onclick="bkPickRoute(this)">
+        <div class="bk-route-name" data-i="bk_r_qc">Québec City</div>
+        <div class="bk-route-price">440$</div>
+      </div>
     </div>
+
+    <div class="bk-form-row">
+      <div class="bk-fgroup"><label data-i="bk_f_date">Date</label><input type="date" id="bk-date"></div>
+      <div class="bk-fgroup"><label data-i="bk_f_time">Heure</label><input type="time" id="bk-time" value="08:00"></div>
+    </div>
+    <div class="bk-form-row full">
+      <div class="bk-fgroup"><label data-i="bk_f_flight">Vol (optionnel)</label><input type="text" id="bk-flight" placeholder="AC 301"></div>
+    </div>
+    <div class="bk-form-row">
+      <div class="bk-fgroup"><label data-i="bk_f_name">Nom complet</label><input type="text" id="bk-name" placeholder="Marie Dupont"></div>
+      <div class="bk-fgroup"><label data-i="bk_f_tel">Téléphone</label><input type="tel" id="bk-tel" placeholder="514 000-0000"></div>
+    </div>
+
+    <div class="bk-error" id="bk-error"></div>
+
+    <button class="bk-submit" id="bk-submit" onclick="bkSubmit()">
+      <span id="bk-submit-txt" data-i="bk_submit">✈ CONFIRMER LA RÉSERVATION</span>
+      <div class="bk-spinner" id="bk-spinner"></div>
+    </button>
+  </div>
+</section>
+
+<!-- CONFIRMATION OVERLAY -->
+<div class="bk-overlay" id="bk-overlay">
+  <div class="bk-card">
+    <div class="bk-check">✅</div>
+    <h3 data-i="bk_ov_title">Merci pour votre réservation !</h3>
+    <p data-i="bk_ov_sub">Votre chauffeur sera bientôt assigné. Confirmez rapidement via l'un des canaux ci-dessous.</p>
+    <div class="bk-channels">
+      <button onclick="bkConfirmMessenger()" class="fb" type="button" data-i="bk_ov_fb">📘 MESSENGER</button>
+      <button onclick="bkConfirmWhatsApp()" type="button" data-i="bk_ov_wa">💬 WHATSAPP</button>
+    </div>
+    <div class="bk-ref">
+      <div class="bk-ref-lbl" data-i="bk_ov_ref">NUMÉRO DE RÉSERVATION</div>
+      <div class="bk-ref-num" id="bk-ov-ref">TSC-0000</div>
+    </div>
+    <div class="bk-summary" id="bk-ov-summary"></div>
+    <div class="bk-price-box">
+      <div class="bk-price" id="bk-ov-price">—</div>
+      <div class="bk-price-note" data-i="bk_ov_note">Tarif fixe · Confort</div>
+    </div>
+    <a href="https://square.link/u/tsQ8xVf3" onclick="trackDeposit()" target="_blank" class="bk-pay-btn" data-i="bk_ov_pay">💳 PAYER LE DÉPÔT EN LIGNE</a>
+    <button class="bk-close-btn" onclick="bkCloseOverlay()" data-i="bk_ov_close">Fermer</button>
   </div>
 </div>
 
@@ -341,13 +452,40 @@ var fr = {
   h_sub:"Jusqu\u2019\u00e0 4 passagers \u00b7 Int\u00e9rieur premium \u00b7 Prix fixe garanti",
   h_tagline:"CONFORT BY PONT\u00c9 TAXI",
   h_wa:"R\u00c9SERVER SUR WHATSAPP",
+  h_book_now:"R\u00c9SERVER MAINTENANT",
   h_sms:"SMS",
   h_call:"APPELER",
   h_ms:"MESSENGER",
   h_tarifs:"VOIR LES TARIFS",
+  bk_eyebrow:"R\u00c9SERVATION",
+  bk_title:"R\u00e9servez votre <em>Confort</em>",
+  bk_lede:"Choisissez votre trajet, indiquez vos coordonn\u00e9es, et confirmez en un instant.",
+  bk_r_downtown:"Centre-Ville \u2192 YUL",
+  bk_r_z1:"Rive-Sud \u2014 Zone 1",
+  bk_r_z2:"Rive-Sud \u2014 Zone 2",
+  bk_r_z3:"Rive-Sud \u2014 Zone 3",
+  bk_r_z4:"Rive-Sud \u2014 Zone 4",
+  bk_r_trbl:"Mont-Tremblant",
+  bk_r_ott:"Ottawa",
+  bk_r_qc:"Qu\u00e9bec City",
+  bk_f_date:"Date",
+  bk_f_time:"Heure",
+  bk_f_flight:"Vol (optionnel)",
+  bk_f_name:"Nom complet",
+  bk_f_tel:"T\u00e9l\u00e9phone",
+  bk_submit:"\u2708 CONFIRMER LA R\u00c9SERVATION",
+  bk_ov_title:"Merci pour votre r\u00e9servation\u00a0!",
+  bk_ov_sub:"Votre chauffeur sera bient\u00f4t assign\u00e9. Confirmez rapidement via l\u2019un des canaux ci-dessous.",
+  bk_ov_fb:"\uD83D\uDCD8 MESSENGER",
+  bk_ov_wa:"\uD83D\uDCAC WHATSAPP",
+  bk_ov_ref:"NUM\u00c9RO DE R\u00c9SERVATION",
+  bk_ov_note:"Tarif fixe \u00b7 Confort",
+  bk_ov_pay:"\uD83D\uDCB3 PAYER LE D\u00c9P\u00d4T EN LIGNE",
+  bk_ov_close:"Fermer",
   w_eyebrow:"POURQUOI CHOISIR CONFORT",
   w_title:"Le juste <em>\u00e9quilibre</em>",
   w_lede:"Entre la simplicit\u00e9 de la Berline et le prestige du SUV Elite, Confort offre un int\u00e9rieur premium sans d\u00e9passer votre budget.",
+  w_lede2:"Confort n\u2019est pas simplement une Berline avec un suppl\u00e9ment \u2014 c\u2019est une cat\u00e9gorie de v\u00e9hicules \u00e0 part enti\u00e8re, s\u00e9lectionn\u00e9s pour leur int\u00e9rieur haut de gamme, leur silence de roulement et leur confort de conduite. Si\u00e8ges en cuir ou similicuir, climatisation zonale, finition soign\u00e9e\u00a0: chaque d\u00e9tail est pens\u00e9 pour un trajet agr\u00e9able, que ce soit pour une r\u00e9union d\u2019affaires, un transfert a\u00e9roport, ou simplement parce que vous m\u00e9ritez mieux qu\u2019un v\u00e9hicule standard.",
   w1_t:"D\u00c9PLACEMENT D\u2019AFFAIRES",w1_d:"Rendez-vous client, r\u00e9union \u2014 arrivez repos\u00e9 et pr\u00e9sentable.",
   w2_t:"TRANSFERT A\u00c9ROPORT",w2_d:"Un peu plus d\u2019espace et de confort pour bien commencer le voyage.",
   w3_t:"JUSQU\u2019\u00c0 4 PASSAGERS",w3_d:"Id\u00e9al pour un couple, une petite famille, ou entre coll\u00e8gues.",
@@ -393,13 +531,40 @@ var en = {
   h_sub:"Up to 4 passengers \u00b7 Premium interior \u00b7 Fixed price guaranteed",
   h_tagline:"CONFORT BY PONT\u00c9 TAXI",
   h_wa:"BOOK ON WHATSAPP",
+  h_book_now:"BOOK NOW",
   h_sms:"SMS",
   h_call:"CALL",
   h_ms:"MESSENGER",
   h_tarifs:"VIEW RATES",
+  bk_eyebrow:"BOOKING",
+  bk_title:"Book your <em>Confort</em>",
+  bk_lede:"Choose your route, enter your details, and confirm instantly.",
+  bk_r_downtown:"Downtown \u2192 YUL",
+  bk_r_z1:"South Shore \u2014 Zone 1",
+  bk_r_z2:"South Shore \u2014 Zone 2",
+  bk_r_z3:"South Shore \u2014 Zone 3",
+  bk_r_z4:"South Shore \u2014 Zone 4",
+  bk_r_trbl:"Mont-Tremblant",
+  bk_r_ott:"Ottawa",
+  bk_r_qc:"Quebec City",
+  bk_f_date:"Date",
+  bk_f_time:"Time",
+  bk_f_flight:"Flight (optional)",
+  bk_f_name:"Full name",
+  bk_f_tel:"Phone",
+  bk_submit:"\u2708 CONFIRM BOOKING",
+  bk_ov_title:"Thank you for your booking!",
+  bk_ov_sub:"Your chauffeur will be assigned shortly. Confirm quickly via one of the channels below.",
+  bk_ov_fb:"\uD83D\uDCD8 MESSENGER",
+  bk_ov_wa:"\uD83D\uDCAC WHATSAPP",
+  bk_ov_ref:"BOOKING NUMBER",
+  bk_ov_note:"Fixed rate \u00b7 Confort",
+  bk_ov_pay:"\uD83D\uDCB3 PAY DEPOSIT ONLINE",
+  bk_ov_close:"Close",
   w_eyebrow:"WHY CHOOSE CONFORT",
   w_title:"The right <em>balance</em>",
   w_lede:"Between the simplicity of Berline and the prestige of SUV Elite, Confort offers a premium interior without exceeding your budget.",
+  w_lede2:"Confort isn\u2019t just a Berline with an upgrade fee \u2014 it\u2019s a distinct category of vehicles, selected for their upscale interior, quiet ride, and driving comfort. Leather or leatherette seating, dual-zone climate control, refined finishes: every detail is designed for a pleasant ride, whether it\u2019s a business meeting, an airport transfer, or simply because you deserve better than a standard vehicle.",
   w1_t:"BUSINESS TRAVEL",w1_d:"Client meetings, appointments \u2014 arrive rested and presentable.",
   w2_t:"AIRPORT TRANSFER",w2_d:"A bit more space and comfort to start your trip right.",
   w3_t:"UP TO 4 PASSENGERS",w3_d:"Perfect for a couple, small family, or colleagues.",
@@ -440,6 +605,7 @@ var en = {
 
 function setLang(lang){
   L = lang;
+  try{ localStorage.setItem('ponte_lang', lang); }catch(e){}
   document.documentElement.lang = lang;
   document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
   document.getElementById('btn-en').classList.toggle('active', lang==='en');
@@ -451,12 +617,11 @@ function setLang(lang){
       else el.textContent = t[k];
     }
   });
+  if(bkRoute && bkRoute.key) bkRoute.name = bkRouteNames[lang][bkRoute.key];
   var msg = t.msg_hero;
   var links = {
     'lnk-hero-wa':    'https://wa.me/'+WA+'?text='+encodeURIComponent(msg),
     'lnk-hero-sms':   'sms:+'+WA+'?body='+encodeURIComponent(msg),
-    'lnk-cb1-wa':     'https://wa.me/'+WA+'?text='+encodeURIComponent(msg),
-    'lnk-cb1-sms':    'sms:+'+WA+'?body='+encodeURIComponent(msg),
     'lnk-cb2-wa':     'https://wa.me/'+WA+'?text='+encodeURIComponent(msg),
     'lnk-cb2-sms':    'sms:+'+WA+'?body='+encodeURIComponent(msg),
     'lnk-closing-wa': 'https://wa.me/'+WA+'?text='+encodeURIComponent(msg),
@@ -468,7 +633,111 @@ function setLang(lang){
   });
 }
 
-setLang('fr');
+/* ===== BOOKING FORM ===== */
+var bkRoute = {key:'downtown', name:'Centre-Ville \u2192 YUL', price:70};
+var bkRouteNames = {
+  fr:{downtown:'Centre-Ville \u2192 YUL', zone1:'Rive-Sud \u2014 Zone 1', zone2:'Rive-Sud \u2014 Zone 2', zone3:'Rive-Sud \u2014 Zone 3', zone4:'Rive-Sud \u2014 Zone 4', tremblant:'Mont-Tremblant', ottawa:'Ottawa', quebec:'Qu\u00e9bec City'},
+  en:{downtown:'Downtown \u2192 YUL', zone1:'South Shore \u2014 Zone 1', zone2:'South Shore \u2014 Zone 2', zone3:'South Shore \u2014 Zone 3', zone4:'South Shore \u2014 Zone 4', tremblant:'Mont-Tremblant', ottawa:'Ottawa', quebec:'Quebec City'}
+};
+var _bkLastOrder = {};
+
+function bkPickRoute(el){
+  document.querySelectorAll('.bk-route').forEach(function(r){ r.classList.remove('sel'); });
+  el.classList.add('sel');
+  var key = el.dataset.route;
+  bkRoute = { key:key, name: bkRouteNames[L][key], price: parseInt(el.dataset.price,10) };
+}
+
+function bkSubmit(){
+  var name = document.getElementById('bk-name').value.trim();
+  var tel = document.getElementById('bk-tel').value.trim();
+  var date = document.getElementById('bk-date').value;
+  var time = document.getElementById('bk-time').value || '08:00';
+  var flight = document.getElementById('bk-flight').value.trim();
+  var errEl = document.getElementById('bk-error');
+
+  if(!name||!tel||!date){
+    var missing = [];
+    if(!name) missing.push(L==='en'?'Name':'Nom');
+    if(!tel) missing.push(L==='en'?'Phone':'T\u00e9l\u00e9phone');
+    if(!date) missing.push('Date');
+    errEl.textContent = (L==='en'?'Please fill in: ':'Veuillez remplir : ') + missing.join(', ');
+    errEl.style.display = 'block';
+    errEl.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+  errEl.style.display = 'none';
+
+  var btn = document.getElementById('bk-submit');
+  var txt = document.getElementById('bk-submit-txt');
+  var spin = document.getElementById('bk-spinner');
+  btn.disabled = true;
+  txt.textContent = L==='en' ? 'SENDING...' : 'ENVOI EN COURS...';
+  spin.style.display = 'block';
+
+  var ref = 'TSC-' + Math.floor(1000 + Math.random()*9000);
+  var dateStr = new Date(date+'T12:00').toLocaleDateString(L==='en'?'en-CA':'fr-CA', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+
+  setTimeout(function(){
+    spin.style.display = 'none';
+    btn.disabled = false;
+    txt.textContent = L==='en' ? '\u2708 CONFIRM BOOKING' : '\u2708 CONFIRMER LA R\u00c9SERVATION';
+
+    _bkLastOrder = {ref:ref, name:name, tel:tel, route:bkRoute.name, price:bkRoute.price, date:dateStr, time:time, flight:flight};
+
+    document.getElementById('bk-ov-ref').textContent = ref;
+    var summary = '<strong>'+ (L==='en'?'Route: ':'Trajet : ') +'</strong>'+bkRoute.name+'<br>'
+      + '<strong>'+ (L==='en'?'Date: ':'Date : ') +'</strong>'+dateStr+' \u2014 '+time+'<br>'
+      + '<strong>'+ (L==='en'?'Name: ':'Nom : ') +'</strong>'+name+'<br>'
+      + '<strong>'+ (L==='en'?'Phone: ':'T\u00e9l\u00e9phone : ') +'</strong>'+tel
+      + (flight ? '<br><strong>'+(L==='en'?'Flight: ':'Vol : ')+'</strong>'+flight : '');
+    document.getElementById('bk-ov-summary').innerHTML = summary;
+    document.getElementById('bk-ov-price').textContent = bkRoute.price + '$';
+
+    document.getElementById('bk-overlay').classList.add('show');
+  }, 1000);
+}
+
+function bkCloseOverlay(){
+  document.getElementById('bk-overlay').classList.remove('show');
+}
+
+function bkConfirmWhatsApp(){
+  var o = _bkLastOrder;
+  var lines = [
+    '\uD83D\uDE95 CONFORT - ' + (o.ref||''),
+    '\uD83D\uDCCB ' + (o.name||'') + ' | ' + (o.tel||''),
+    '\uD83D\uDCCD ' + (o.route||''),
+    '\uD83D\uDCC5 ' + (o.date||'') + ' - ' + (o.time||'') + 'h',
+    o.flight ? '\u2708\uFE0F Vol: ' + o.flight : null,
+    '\uD83D\uDCB0 ' + (o.price||0) + '$',
+    '---',
+    '\u2705 Confirmer: OUI / NON'
+  ];
+  var msg = lines.filter(function(l){return l!==null&&l!==undefined;}).join('\n');
+  window.open('https://wa.me/15147149576?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function bkConfirmMessenger(){
+  var o = _bkLastOrder;
+  var msg = (L==='en'?'Hi, booking confirmation ':'Bonjour, confirmation r\u00e9servation ') + (o.ref||'') + ' - ' + (o.route||'') + ' - ' + (o.date||'') + ' ' + (o.time||'') + ' - ' + (o.price||0) + '$';
+  window.open('https://m.me/pontemtltaxi?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function trackDeposit(){
+  if(typeof gtag === 'function') gtag('event', 'deposit_click', {event_category:'conversion', event_label:'square_deposit_confort'});
+}
+
+var _bkDateInput = document.getElementById('bk-date');
+if(_bkDateInput){
+  var _today = new Date().toISOString().split('T')[0];
+  _bkDateInput.value = _today;
+  _bkDateInput.min = _today;
+}
+
+var _savedLang='fr';
+try{ _savedLang = localStorage.getItem('ponte_lang') || 'fr'; }catch(e){}
+setLang(_savedLang);
 </script>
 </body>
 </html>

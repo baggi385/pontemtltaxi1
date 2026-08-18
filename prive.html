@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUV Elite Privé — Service Sur Mesure | Ponté Taxi Montréal</title>
+<meta name="description" content="SUV Elite Privé — service privé sur mesure à l'heure. Minimum 3 heures, votre chauffeur reste à votre disposition. Agglomération de Montréal.">
+<link rel="canonical" href="https://pontemtl.taxi/prive.html">
+<meta property="og:title" content="SUV Elite Privé — Ponté Taxi Montréal">
+<meta property="og:description" content="Service privé sur mesure à l'heure. Votre chauffeur, votre horaire, votre journée.">
+<meta property="og:url" content="https://pontemtl.taxi/prive.html">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--b:#07090f;--y:#F5C800;--w:#f8f5ef;--wd:rgba(248,245,239,.55);--wdd:rgba(248,245,239,.28);--line:rgba(245,200,0,.12)}
+html,body{background:var(--b)!important}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--w);overflow-x:hidden}
+section{background:var(--b)!important}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 32px;background:rgba(7,9,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;color:var(--w);text-decoration:none}
+.nav-logo span{color:var(--y)}
+.nav-links{display:flex;align-items:center;gap:24px}
+.back-link{font-size:11px;letter-spacing:1px;color:var(--wd);text-decoration:none;display:flex;align-items:center;gap:6px;transition:.2s}
+.back-link:hover{color:var(--y)}
+.lang-sw{display:flex;gap:6px}
+.lang-btn{background:none;border:none;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:2px;color:var(--wd);cursor:pointer;padding:2px 4px;transition:.2s}
+.lang-btn.active{color:var(--y)}
+.lang-sep{color:var(--wdd);font-size:11px;line-height:2}
+.hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden;background:var(--b)!important}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(245,200,0,.07),transparent 70%)}
+.hero-rings{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;pointer-events:none}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:5px;color:var(--y);margin-bottom:32px;position:relative}
+.hero-eyebrow .ring{width:7px;height:7px;border:1.5px solid var(--y);border-radius:50%}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,8vw,84px);line-height:1.08;font-weight:500;margin-bottom:20px;position:relative}
+.hero-title em{color:var(--y);font-style:italic}
+.hero-sub{font-size:15px;color:var(--wd);line-height:1.7;max-width:540px;margin:0 auto 12px;position:relative;font-style:italic;font-family:'Cormorant Garamond',serif}
+.hero-tagline{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:4px;color:rgba(245,200,0,.45);margin-bottom:40px}
+.hero-cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn-primary{background:var(--y)!important;color:var(--b)!important;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;padding:15px 30px;border-radius:2px;text-decoration:none;transition:.25s;border:1px solid var(--y);cursor:pointer}
+.btn-ghost{background:var(--b)!important;color:var(--w);font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;padding:15px 30px;border:1px solid rgba(255,255,255,.18);border-radius:2px;text-decoration:none;transition:.25s;cursor:pointer}
+.btn-ghost:hover{border-color:var(--y);color:var(--y)}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:.35}
+.scroll-hint span{font-size:9px;letter-spacing:2px;color:var(--y)}
+.scroll-line{width:1px;height:40px;background:linear-gradient(var(--y),transparent)}
+section{padding:80px 24px}
+.sec-inner{max-width:720px;margin:0 auto;text-align:center;background:transparent!important}
+.sec-eyebrow{display:block;font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:5px;color:var(--y);margin-bottom:14px}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,50px);font-weight:500;line-height:1.1;margin-bottom:16px}
+.sec-title em{color:var(--y);font-style:italic}
+.sec-lede{font-size:14px;color:var(--wd);line-height:1.85;max-width:580px;margin:0 auto}
+.sec-divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:0}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px;text-align:left}
+.why-item{display:flex;align-items:flex-start;gap:14px;padding:20px;border:1px solid var(--line);border-radius:2px;background:rgba(245,200,0,.03)!important}
+.why-icon{font-size:26px;flex-shrink:0;margin-top:2px}
+.why-text strong{display:block;color:var(--w);font-size:14px;font-family:'Bebas Neue',sans-serif;letter-spacing:1px;margin-bottom:4px}
+.why-text span{font-size:13px;color:var(--wd);line-height:1.6}
+.calc-box{max-width:480px;margin:44px auto 0;border:1px solid var(--line);padding:36px 32px;background:rgba(245,200,0,.02)!important}
+.calc-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.calc-lbl{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:2px;color:var(--wd)}
+.calc-stepper{display:flex;align-items:center;gap:16px}
+.calc-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--b)!important;color:var(--y);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.calc-btn:hover{border-color:var(--y)}
+.calc-val{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--w);min-width:70px;text-align:center}
+.calc-price-box{text-align:center;padding-top:20px;border-top:1px solid var(--line)}
+.calc-price-lbl{font-size:10px;letter-spacing:2px;color:var(--wdd);text-transform:uppercase;margin-bottom:6px}
+.calc-price{font-family:'Cormorant Garamond',serif;font-size:52px;color:var(--y);font-weight:600;line-height:1}
+.calc-price-note{font-size:11.5px;color:var(--wdd);margin-top:8px}
+.cb-section{background:rgba(245,200,0,.03)!important;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 24px}
+.cb-inner{max-width:600px;margin:0 auto;text-align:center}
+.cb-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:3px;margin-bottom:8px}
+.cb-sub{font-size:13px;color:var(--wd);margin-bottom:28px}
+.cb-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cb-btn{display:flex;align-items:center;gap:8px;background:var(--b)!important;border:1px solid rgba(255,255,255,.18);color:var(--w);font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1.5px;padding:12px 22px;text-decoration:none;border-radius:2px;transition:.25s}
+.cb-btn:hover{border-color:var(--y);color:var(--y)}
+.cb-btn.gold{background:var(--b)!important;border-color:var(--y);color:var(--y)}
+.cb-dot{width:6px;height:6px;border-radius:50%;background:var(--y)}
+.bk-section{padding:70px 24px;background:var(--b)!important}
+.bk-inner{max-width:600px;margin:0 auto}
+.bk-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.bk-form-row.full{grid-template-columns:1fr}
+.bk-fgroup label{display:block;font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:2px;color:var(--wd);margin-bottom:6px}
+.bk-fgroup input{width:100%;background:rgba(255,255,255,.06)!important;border:1px solid var(--line);border-radius:2px;padding:12px 14px;color:var(--w)!important;font-family:'DM Sans',sans-serif;font-size:14px}
+.bk-fgroup input:focus{outline:none;border-color:var(--y)}
+.bk-error{color:#ff6b6b;font-size:12px;margin-top:10px;padding:10px 14px;background:rgba(255,107,107,.08);border:1px solid rgba(255,107,107,.25);border-radius:2px;display:none}
+.bk-submit{width:100%;background:var(--y)!important;color:var(--b)!important;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px;padding:16px;border:none;border-radius:2px;cursor:pointer;margin-top:16px;transition:.2s;position:relative}
+.bk-submit:disabled{opacity:.6;cursor:default}
+.bk-spinner{display:none;width:16px;height:16px;border:2px solid rgba(7,9,15,.3);border-top-color:var(--b);border-radius:50%;animation:bkspin .7s linear infinite;position:absolute;right:18px;top:50%;margin-top:-8px}
+@keyframes bkspin{to{transform:rotate(360deg)}}
+.bk-overlay{display:none;position:fixed;inset:0;background:rgba(7,9,15,.9)!important;z-index:500;align-items:flex-start;justify-content:center;padding:24px;backdrop-filter:blur(8px);overflow-y:auto}
+.bk-overlay.show{display:flex}
+.bk-card{background:#0d0f16!important;border:1px solid var(--line);border-radius:4px;max-width:420px;width:100%;padding:32px 28px;margin-top:40px}
+.bk-check{font-size:36px;text-align:center;margin-bottom:10px}
+.bk-card h3{font-family:'Cormorant Garamond',serif;font-size:24px;text-align:center;margin-bottom:6px;font-weight:600}
+.bk-card p{font-size:12px;color:var(--wd);text-align:center;margin-bottom:20px;line-height:1.6}
+.bk-channels{display:flex;gap:8px;margin-bottom:16px}
+.bk-channels button{flex:1;padding:11px;border-radius:2px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:1px;cursor:pointer;border:1.5px solid rgba(37,211,102,.25);background:rgba(37,211,102,.15)!important;color:#25d366}
+.bk-channels button.fb{border-color:rgba(24,119,242,.3);background:rgba(24,119,242,.18)!important;color:#4a90d9}
+.bk-ref{text-align:center;padding:14px;background:rgba(245,200,0,.04)!important;border:1px solid var(--line);border-radius:2px;margin-bottom:14px}
+.bk-ref-lbl{font-size:10px;letter-spacing:2px;color:var(--wdd);margin-bottom:4px}
+.bk-ref-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--y);letter-spacing:2px}
+.bk-summary{font-size:13px;color:var(--wd);line-height:2;margin-bottom:14px}
+.bk-summary strong{color:var(--w)}
+.bk-price-box{text-align:center;padding:16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:16px;background:transparent!important}
+.bk-price{font-family:'Cormorant Garamond',serif;font-size:34px;color:var(--y);font-weight:600}
+.bk-price-note{font-size:11px;color:var(--wdd);margin-top:4px}
+.bk-pay-btn{display:block;text-align:center;background:var(--y)!important;color:var(--b)!important;border-radius:2px;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px;text-decoration:none;margin-bottom:10px}
+.bk-close-btn{display:block;width:100%;text-align:center;background:var(--b)!important;border:1px solid rgba(255,255,255,.18);color:var(--wd);border-radius:2px;padding:12px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1px;cursor:pointer}
+.closing{padding:80px 24px;text-align:center;background:var(--b)!important}
+.closing-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(26px,5vw,46px);color:var(--w);line-height:1.25;max-width:600px;margin:0 auto 40px}
+.closing-quote em{color:var(--y);font-style:italic}
+footer{background:rgba(0,0,0,.3);border-top:1px solid var(--line);padding:32px 24px;text-align:center}
+footer .f-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;margin-bottom:10px}
+footer .f-logo span{color:var(--y)}
+footer .f-links{display:flex;gap:24px;justify-content:center;margin:14px 0;flex-wrap:wrap;align-items:center}
+footer .f-links a{font-size:12px;color:var(--wd);text-decoration:none;letter-spacing:.5px;transition:.2s}
+footer .f-links a:hover{color:var(--y)}
+footer .f-social{display:flex;gap:12px;align-items:center}
+footer .f-social a{width:28px;height:28px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);border-radius:50%;transition:.25s}
+footer .f-social a:hover{border-color:var(--y)}
+footer .f-social svg{width:13px;height:13px;fill:var(--wd)}
+footer .f-copy{font-size:11px;color:var(--wdd)}
+.topbar{height:4px;background:linear-gradient(90deg,transparent,var(--y) 15%,var(--y) 85%,transparent)}
+@media(max-width:600px){nav{padding:14px 20px}.why-grid{grid-template-columns:1fr}.calc-box{padding:28px 20px}}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<nav>
+  <a class="nav-logo" href="/">PONTE<span>MTL</span></a>
+  <div class="nav-links">
+    <a class="back-link" href="/elite.html" data-i="nav_back">← SUV Elite</a>
+    <div class="lang-sw">
+      <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <svg class="hero-rings" viewBox="0 0 900 900">
+    <circle cx="450" cy="450" r="420" fill="none" stroke="#F5C800" stroke-width=".6" opacity=".15"/>
+    <circle cx="450" cy="450" r="340" fill="none" stroke="#F5C800" stroke-width=".5" opacity=".1"/>
+    <circle cx="450" cy="450" r="260" fill="none" stroke="#F5C800" stroke-width=".4" opacity=".07"/>
+  </svg>
+  <div class="hero-eyebrow"><span class="ring"></span><span data-i="h_eyebrow">PONTEMTL · SUV ELITE PRIVÉ</span><span class="ring"></span></div>
+  <h1 class="hero-title" data-i="h_title">Votre chauffeur,<br><em>votre horaire.</em></h1>
+  <p class="hero-sub" data-i="h_sub">Service privé sur mesure à l'heure · Minimum 3 heures</p>
+  <p class="hero-tagline" data-i="h_tagline">SUV ELITE PRIVÉ BY PONTÉ TAXI</p>
+  <div class="hero-cta-row">
+    <button type="button" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth',block:'start'});" class="btn-primary" data-i="h_book_now">RÉSERVER MAINTENANT</button>
+    <a href="tel:+15147149576" class="btn-ghost" data-i="h_call">APPELER</a>
+    <a href="https://m.me/pontemtltaxi" class="btn-ghost" data-i="h_ms">MESSENGER</a>
+  </div>
+  <div class="scroll-hint"><span>↓</span><div class="scroll-line"></div></div>
+</section>
+
+<div class="sec-divider"></div>
+
+<section>
+  <div class="sec-inner">
+    <span class="sec-eyebrow" data-i="w_eyebrow">SERVICE SUR MESURE</span>
+    <h2 class="sec-title" data-i="w_title">Votre journée, <em>votre rythme</em></h2>
+    <p class="sec-lede" data-i="w_lede1">Votre itinéraire ne se limite pas toujours à un point A et un point B. Un rendez-vous, puis un autre, un dîner, puis retour au bureau — avec le service à l'heure, votre véhicule et votre chauffeur restent à votre disposition pendant toute la durée de la réservation. Aucune nouvelle réservation, aucune attente. Indiquez simplement à votre chauffeur la prochaine destination.</p>
+    <p class="sec-lede" style="margin-top:16px" data-i="w_lede2">Idéal pour les déplacements d'affaires avec plusieurs rendez-vous, les événements corporatifs, le magasinage, ou une journée sur mesure — sans frais horaires supplémentaires et sans surcharge, même aux heures de pointe.</p>
+    <div class="why-grid">
+      <div class="why-item"><div class="why-icon">💼</div><div class="why-text"><strong data-i="w1_t">RENDEZ-VOUS MULTIPLES</strong><span data-i="w1_d">Enchaînez vos réunions sans réserver un nouveau trajet à chaque fois.</span></div></div>
+      <div class="why-item"><div class="why-icon">🎉</div><div class="why-text"><strong data-i="w2_t">ÉVÉNEMENTS CORPORATIFS</strong><span data-i="w2_d">Un véhicule dédié pour toute la durée de votre événement.</span></div></div>
+      <div class="why-item"><div class="why-icon">🛍️</div><div class="why-text"><strong data-i="w3_t">MAGASINAGE & SORTIES</strong><span data-i="w3_d">Plusieurs arrêts, votre chauffeur attend le temps qu'il faut.</span></div></div>
+      <div class="why-item"><div class="why-icon">📍</div><div class="why-text"><strong data-i="w4_t">TERRITOIRE FLEXIBLE</strong><span data-i="w4_d">Agglomération de Montréal, arrêts multiples inclus.</span></div></div>
+    </div>
+
+    <div class="calc-box">
+      <div class="calc-row">
+        <span class="calc-lbl" data-i="calc_hours">HEURES</span>
+        <div class="calc-stepper">
+          <button class="calc-btn" onclick="calcHours(-1)">−</button>
+          <span class="calc-val" id="calc-hours-val">3</span>
+          <button class="calc-btn" onclick="calcHours(1)">+</button>
+        </div>
+      </div>
+      <div class="calc-price-box">
+        <div class="calc-price-lbl" data-i="calc_price_lbl">PRIX ESTIMÉ</div>
+        <div class="calc-price" id="calc-price">450$</div>
+        <div class="calc-price-note" data-i="calc_note">450$ pour 3h · +120$ chaque heure supplémentaire</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<div class="cb-section">
+  <div class="cb-inner">
+    <div class="cb-title" data-i="cb_title">Une question avant de réserver ?</div>
+    <div class="cb-sub" data-i="cb_sub">Écrivez-nous — nous confirmons rapidement</div>
+    <div class="cb-row">
+      <a href="tel:+15147149576" class="cb-btn" data-i="cb_call"><span class="cb-dot"></span>CALL</a>
+      <a id="lnk-cb-sms" href="#" class="cb-btn gold" data-i="cb_sms"><span class="cb-dot"></span>SMS</a>
+      <a id="lnk-cb-wa" href="#" class="cb-btn" data-i="cb_wa"><span class="cb-dot"></span>WHATSAPP</a>
+      <a href="https://m.me/pontemtltaxi" class="cb-btn" data-i="cb_ms"><span class="cb-dot"></span>MESSENGER</a>
+    </div>
+  </div>
+</div>
+
+<section class="bk-section" id="booking">
+  <div class="bk-inner">
+    <span class="sec-eyebrow" data-i="bk_eyebrow" style="text-align:center;display:block">RÉSERVATION</span>
+    <h2 class="sec-title" style="text-align:center" data-i="bk_title">Réservez votre <em>service privé</em></h2>
+    <p class="sec-lede" style="text-align:center" data-i="bk_lede">Ajustez la durée ci-dessus, indiquez vos coordonnées, et confirmez en un instant.</p>
+    <div class="bk-form-row" style="margin-top:28px">
+      <div class="bk-fgroup"><label data-i="bk_f_date">Date</label><input type="date" id="bk-date"></div>
+      <div class="bk-fgroup"><label data-i="bk_f_time">Heure de début</label><input type="time" id="bk-time" value="08:00"></div>
+    </div>
+    <div class="bk-form-row full">
+      <div class="bk-fgroup"><label data-i="bk_f_zone">Zone de départ</label><input type="text" id="bk-zone" placeholder="Ex: Centre-Ville, Longueuil..."></div>
+    </div>
+    <div class="bk-form-row">
+      <div class="bk-fgroup"><label data-i="bk_f_name">Nom complet</label><input type="text" id="bk-name" placeholder="Marie Dupont"></div>
+      <div class="bk-fgroup"><label data-i="bk_f_tel">Téléphone</label><input type="tel" id="bk-tel" placeholder="514 000-0000"></div>
+    </div>
+    <div class="bk-error" id="bk-error"></div>
+    <button class="bk-submit" id="bk-submit" onclick="bkSubmit()">
+      <span id="bk-submit-txt" data-i="bk_submit">✈ CONFIRMER LA RÉSERVATION</span>
+      <div class="bk-spinner" id="bk-spinner"></div>
+    </button>
+  </div>
+</section>
+
+<div class="bk-overlay" id="bk-overlay">
+  <div class="bk-card">
+    <div class="bk-check">✅</div>
+    <h3 data-i="bk_ov_title">Merci pour votre réservation !</h3>
+    <p data-i="bk_ov_sub">Votre chauffeur sera bientôt assigné. Confirmez rapidement via l'un des canaux ci-dessous.</p>
+    <div class="bk-channels">
+      <button onclick="bkConfirmMessenger()" class="fb" type="button" data-i="bk_ov_fb">📘 MESSENGER</button>
+      <button onclick="bkConfirmWhatsApp()" type="button" data-i="bk_ov_wa">💬 WHATSAPP</button>
+    </div>
+    <div class="bk-ref">
+      <div class="bk-ref-lbl" data-i="bk_ov_ref">NUMÉRO DE RÉSERVATION</div>
+      <div class="bk-ref-num" id="bk-ov-ref">TSP-0000</div>
+    </div>
+    <div class="bk-summary" id="bk-ov-summary"></div>
+    <div class="bk-price-box">
+      <div class="bk-price" id="bk-ov-price">—</div>
+      <div class="bk-price-note" data-i="bk_ov_note">Tarif fixe · SUV Elite Privé</div>
+    </div>
+    <a href="https://square.link/u/tsQ8xVf3" onclick="trackDeposit()" target="_blank" class="bk-pay-btn" data-i="bk_ov_pay">💳 PAYER LE DÉPÔT EN LIGNE</a>
+    <button class="bk-close-btn" onclick="bkCloseOverlay()" data-i="bk_ov_close">Fermer</button>
+  </div>
+</div>
+
+<section class="closing">
+  <p class="closing-quote" data-i="c_quote">Votre journée. <em>Votre rythme.</em></p>
+</section>
+
+<footer>
+  <div class="f-logo">PONTE<span>MTL</span></div>
+  <div class="f-links">
+    <a href="/" data-i="f_home">Accueil</a>
+    <a href="tel:+15147149576">(514) 714-9576</a>
+    <div class="f-social">
+      <a href="https://instagram.com/pontemtltaxi" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.07.05 1.79.22 2.43.46.66.26 1.22.6 1.76 1.15.55.54.89 1.1 1.15 1.76.24.64.41 1.36.46 2.43.05 1.07.06 1.42.06 4.12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.79-.46 2.43-.26.66-.6 1.22-1.15 1.76-.54.55-1.1.89-1.76 1.15-.64.24-1.36.41-2.43.46-1.07.05-1.42.06-4.12.06s-3.05-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.46-.66-.26-1.22-.6-1.76-1.15-.55-.54-.89-1.1-1.15-1.76-.24-.64-.41-1.36-.46-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.07.22-1.79.46-2.43.26-.66.6-1.22 1.15-1.76.54-.55 1.1-.89 1.76-1.15.64-.24 1.36-.41 2.43-.46C8.95 2.01 9.3 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.97.04-1.5.2-1.85.34-.46.18-.79.4-1.14.74-.34.35-.56.68-.74 1.14-.14.35-.3.88-.34 1.85C3.84 9 3.8 9.33 3.8 12s.01 2.99.06 4.04c.04.97.2 1.5.34 1.85.18.46.4.79.74 1.14.35.34.68.56 1.14.74.35.14.88.3 1.85.34 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.97-.04 1.5-.2 1.85-.34.46-.18.79-.4 1.14-.74.34-.35.56-.68.74-1.14.14-.35.3-.88.34-1.85.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.97-.2-1.5-.34-1.85-.18-.46-.4-.79-.74-1.14-.35-.34-.68-.56-1.14-.74-.35-.14-.88-.3-1.85-.34C14.99 3.81 14.67 3.8 12 3.8zm0 3.06a5.14 5.14 0 1 1 0 10.28 5.14 5.14 0 0 1 0-10.28zm0 1.8a3.34 3.34 0 1 0 0 6.68 3.34 3.34 0 0 0 0-6.68zm5.4-3.34a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg></a>
+      <a href="https://m.me/pontemtltaxi" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg></a>
+    </div>
+  </div>
+  <div class="f-copy" data-i="f_copy">&copy; 2026 Pont&eacute; Taxi &middot; Montr&eacute;al, Qu&eacute;bec</div>
+</footer>
+
+<script>
+var L = 'fr';
+var WA = '15147149576';
+var calcHoursVal = 3;
+var BASE_PRICE = 450;
+var HOUR_PRICE = 120;
+var BASE_HOURS = 3;
+
+var fr = {
+  nav_back:"\u2190 SUV Elite",
+  h_eyebrow:"PONTEMTL \u00b7 SUV ELITE PRIV\u00c9",
+  h_title:"Votre chauffeur,<br><em>votre horaire.</em>",
+  h_sub:"Service priv\u00e9 sur mesure \u00e0 l\u2019heure \u00b7 Minimum 3 heures",
+  h_tagline:"SUV ELITE PRIV\u00c9 BY PONT\u00c9 TAXI",
+  h_book_now:"R\u00c9SERVER MAINTENANT",
+  h_call:"APPELER",
+  h_ms:"MESSENGER",
+  w_eyebrow:"SERVICE SUR MESURE",
+  w_title:"Votre journ\u00e9e, <em>votre rythme</em>",
+  w_lede1:"Votre itin\u00e9raire ne se limite pas toujours \u00e0 un point A et un point B. Un rendez-vous, puis un autre, un d\u00eener, puis retour au bureau \u2014 avec le service \u00e0 l\u2019heure, votre v\u00e9hicule et votre chauffeur restent \u00e0 votre disposition pendant toute la dur\u00e9e de la r\u00e9servation. Aucune nouvelle r\u00e9servation, aucune attente. Indiquez simplement \u00e0 votre chauffeur la prochaine destination.",
+  w_lede2:"Id\u00e9al pour les d\u00e9placements d\u2019affaires avec plusieurs rendez-vous, les \u00e9v\u00e9nements corporatifs, le magasinage, ou une journ\u00e9e sur mesure \u2014 sans frais horaires suppl\u00e9mentaires et sans surcharge, m\u00eame aux heures de pointe.",
+  w1_t:"RENDEZ-VOUS MULTIPLES",w1_d:"Encha\u00eenez vos r\u00e9unions sans r\u00e9server un nouveau trajet \u00e0 chaque fois.",
+  w2_t:"\u00c9V\u00c9NEMENTS CORPORATIFS",w2_d:"Un v\u00e9hicule d\u00e9di\u00e9 pour toute la dur\u00e9e de votre \u00e9v\u00e9nement.",
+  w3_t:"MAGASINAGE & SORTIES",w3_d:"Plusieurs arr\u00eats, votre chauffeur attend le temps qu\u2019il faut.",
+  w4_t:"TERRITOIRE FLEXIBLE",w4_d:"Agglom\u00e9ration de Montr\u00e9al, arr\u00eats multiples inclus.",
+  calc_hours:"HEURES",
+  calc_price_lbl:"PRIX ESTIM\u00c9",
+  calc_note:"450$ pour 3h \u00b7 +120$ chaque heure suppl\u00e9mentaire",
+  cb_title:"Une question avant de r\u00e9server\u00a0?",
+  cb_sub:"\u00c9crivez-nous \u2014 nous confirmons rapidement",
+  cb_call:"CALL",cb_sms:"SMS",cb_wa:"WHATSAPP",cb_ms:"MESSENGER",
+  bk_eyebrow:"R\u00c9SERVATION",
+  bk_title:"R\u00e9servez votre <em>service priv\u00e9</em>",
+  bk_lede:"Ajustez la dur\u00e9e ci-dessus, indiquez vos coordonn\u00e9es, et confirmez en un instant.",
+  bk_f_date:"Date",
+  bk_f_time:"Heure de d\u00e9but",
+  bk_f_zone:"Zone de d\u00e9part",
+  bk_f_name:"Nom complet",
+  bk_f_tel:"T\u00e9l\u00e9phone",
+  bk_submit:"\u2708 CONFIRMER LA R\u00c9SERVATION",
+  bk_ov_title:"Merci pour votre r\u00e9servation\u00a0!",
+  bk_ov_sub:"Votre chauffeur sera bient\u00f4t assign\u00e9. Confirmez rapidement via l\u2019un des canaux ci-dessous.",
+  bk_ov_fb:"\uD83D\uDCD8 MESSENGER",
+  bk_ov_wa:"\uD83D\uDCAC WHATSAPP",
+  bk_ov_ref:"NUM\u00c9RO DE R\u00c9SERVATION",
+  bk_ov_note:"Tarif fixe \u00b7 SUV Elite Priv\u00e9",
+  bk_ov_pay:"\uD83D\uDCB3 PAYER LE D\u00c9P\u00d4T EN LIGNE",
+  bk_ov_close:"Fermer",
+  c_quote:"Votre journ\u00e9e. <em>Votre rythme.</em>",
+  f_home:"Accueil",
+  f_copy:"\u00a9 2026 Pont\u00e9 Taxi \u00b7 Montr\u00e9al, Qu\u00e9bec",
+  msg_hero:"Bonjour Pont\u00e9 Taxi, je souhaite r\u00e9server le service SUV Elite Priv\u00e9."
+};
+
+var en = {
+  nav_back:"\u2190 SUV Elite",
+  h_eyebrow:"PONTEMTL \u00b7 SUV ELITE PRIV\u00c9",
+  h_title:"Your chauffeur,<br><em>your schedule.</em>",
+  h_sub:"Private custom hourly service \u00b7 3-hour minimum",
+  h_tagline:"SUV ELITE PRIV\u00c9 BY PONT\u00c9 TAXI",
+  h_book_now:"BOOK NOW",
+  h_call:"CALL",
+  h_ms:"MESSENGER",
+  w_eyebrow:"CUSTOM SERVICE",
+  w_title:"Your day, <em>your pace</em>",
+  w_lede1:"Your day rarely fits into a single point A to point B. One meeting, then another, dinner, then back to the office \u2014 with hourly service, your vehicle and chauffeur stay at your disposal for the entire booking. No re-booking, no waiting around. Just tell your driver where\u2019s next.",
+  w_lede2:"Perfect for business trips with multiple stops, corporate events, shopping, or a custom day on your own schedule \u2014 no hourly surcharges, no surge pricing, even during peak hours.",
+  w1_t:"MULTIPLE MEETINGS",w1_d:"Move between meetings without re-booking every trip.",
+  w2_t:"CORPORATE EVENTS",w2_d:"One dedicated vehicle for the full duration of your event.",
+  w3_t:"SHOPPING & OUTINGS",w3_d:"Multiple stops \u2014 your chauffeur waits as long as needed.",
+  w4_t:"FLEXIBLE TERRITORY",w4_d:"Greater Montr\u00e9al, multiple stops included.",
+  calc_hours:"HOURS",
+  calc_price_lbl:"ESTIMATED PRICE",
+  calc_note:"$450 for 3h \u00b7 +$120 each extra hour",
+  cb_title:"A question before booking?",
+  cb_sub:"Message us \u2014 we confirm quickly",
+  cb_call:"CALL",cb_sms:"SMS",cb_wa:"WHATSAPP",cb_ms:"MESSENGER",
+  bk_eyebrow:"BOOKING",
+  bk_title:"Book your <em>private service</em>",
+  bk_lede:"Adjust the duration above, enter your details, and confirm instantly.",
+  bk_f_date:"Date",
+  bk_f_time:"Start time",
+  bk_f_zone:"Starting zone",
+  bk_f_name:"Full name",
+  bk_f_tel:"Phone",
+  bk_submit:"\u2708 CONFIRM BOOKING",
+  bk_ov_title:"Thank you for your booking!",
+  bk_ov_sub:"Your chauffeur will be assigned shortly. Confirm quickly via one of the channels below.",
+  bk_ov_fb:"\uD83D\uDCD8 MESSENGER",
+  bk_ov_wa:"\uD83D\uDCAC WHATSAPP",
+  bk_ov_ref:"BOOKING NUMBER",
+  bk_ov_note:"Fixed rate \u00b7 SUV Elite Priv\u00e9",
+  bk_ov_pay:"\uD83D\uDCB3 PAY DEPOSIT ONLINE",
+  bk_ov_close:"Close",
+  c_quote:"Your day. <em>Your pace.</em>",
+  f_home:"Home",
+  f_copy:"\u00a9 2026 Pont\u00e9 Taxi \u00b7 Montreal, Quebec",
+  msg_hero:"Hello Pont\u00e9 Taxi, I would like to book the SUV Elite Priv\u00e9 service."
+};
+
+function calcHours(delta){
+  calcHoursVal = Math.max(BASE_HOURS, calcHoursVal + delta);
+  document.getElementById('calc-hours-val').textContent = calcHoursVal;
+  var price = BASE_PRICE + (calcHoursVal - BASE_HOURS) * HOUR_PRICE;
+  document.getElementById('calc-price').textContent = price + '$';
+}
+
+function setLang(lang){
+  L = lang;
+  try{ localStorage.setItem('ponte_lang', lang); }catch(e){}
+  document.documentElement.lang = lang;
+  document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  var t = lang==='fr' ? fr : en;
+  document.querySelectorAll('[data-i]').forEach(function(el){
+    var k = el.dataset.i;
+    if(t[k] !== undefined){
+      if(t[k].indexOf('<') >= 0) el.innerHTML = t[k];
+      else el.textContent = t[k];
+    }
+  });
+  var msg = t.msg_hero;
+  var links = {
+    'lnk-cb-wa': 'https://wa.me/'+WA+'?text='+encodeURIComponent(msg),
+    'lnk-cb-sms':'sms:+'+WA+'?body='+encodeURIComponent(msg)
+  };
+  Object.keys(links).forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.href = links[id];
+  });
+}
+
+var _bkLastOrder = {};
+
+function bkSubmit(){
+  var name = document.getElementById('bk-name').value.trim();
+  var tel = document.getElementById('bk-tel').value.trim();
+  var date = document.getElementById('bk-date').value;
+  var time = document.getElementById('bk-time').value || '08:00';
+  var zone = document.getElementById('bk-zone').value.trim();
+  var errEl = document.getElementById('bk-error');
+
+  if(!name||!tel||!date){
+    var missing = [];
+    if(!name) missing.push(L==='en'?'Name':'Nom');
+    if(!tel) missing.push(L==='en'?'Phone':'T\u00e9l\u00e9phone');
+    if(!date) missing.push('Date');
+    errEl.textContent = (L==='en'?'Please fill in: ':'Veuillez remplir : ') + missing.join(', ');
+    errEl.style.display = 'block';
+    errEl.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+  errEl.style.display = 'none';
+
+  var btn = document.getElementById('bk-submit');
+  var txt = document.getElementById('bk-submit-txt');
+  var spin = document.getElementById('bk-spinner');
+  btn.disabled = true;
+  txt.textContent = L==='en' ? 'SENDING...' : 'ENVOI EN COURS...';
+  spin.style.display = 'block';
+
+  var ref = 'TSP-' + Math.floor(1000 + Math.random()*9000);
+  var price = BASE_PRICE + (calcHoursVal - BASE_HOURS) * HOUR_PRICE;
+  var dateStr = new Date(date+'T12:00').toLocaleDateString(L==='en'?'en-CA':'fr-CA', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+
+  setTimeout(function(){
+    spin.style.display = 'none';
+    btn.disabled = false;
+    txt.textContent = L==='en' ? '\u2708 CONFIRM BOOKING' : '\u2708 CONFIRMER LA R\u00c9SERVATION';
+
+    _bkLastOrder = {ref:ref, name:name, tel:tel, hours:calcHoursVal, price:price, date:dateStr, time:time, zone:zone};
+
+    document.getElementById('bk-ov-ref').textContent = ref;
+    var summary = '<strong>'+ (L==='en'?'Duration: ':'Dur\u00e9e : ') +'</strong>'+calcHoursVal+'h<br>'
+      + '<strong>'+ (L==='en'?'Date: ':'Date : ') +'</strong>'+dateStr+' \u2014 '+time+'<br>'
+      + '<strong>'+ (L==='en'?'Name: ':'Nom : ') +'</strong>'+name+'<br>'
+      + '<strong>'+ (L==='en'?'Phone: ':'T\u00e9l\u00e9phone : ') +'</strong>'+tel
+      + (zone ? '<br><strong>'+(L==='en'?'Zone: ':'Zone : ')+'</strong>'+zone : '');
+    document.getElementById('bk-ov-summary').innerHTML = summary;
+    document.getElementById('bk-ov-price').textContent = price + '$';
+
+    document.getElementById('bk-overlay').classList.add('show');
+  }, 1000);
+}
+
+function bkCloseOverlay(){
+  document.getElementById('bk-overlay').classList.remove('show');
+}
+
+function bkConfirmWhatsApp(){
+  var o = _bkLastOrder;
+  var lines = [
+    '\uD83D\uDE95 SUV ELITE PRIV\u00c9 - ' + (o.ref||''),
+    '\uD83D\uDCCB ' + (o.name||'') + ' | ' + (o.tel||''),
+    '\uD83D\uDD52 ' + (o.hours||3) + 'h' + (o.zone ? ' | ' + o.zone : ''),
+    '\uD83D\uDCC5 ' + (o.date||'') + ' - ' + (o.time||'') + 'h',
+    '\uD83D\uDCB0 ' + (o.price||0) + '$',
+    '---',
+    '\u2705 Confirmer: OUI / NON'
+  ];
+  var msg = lines.filter(function(l){return l!==null&&l!==undefined;}).join('\n');
+  window.open('https://wa.me/15147149576?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function bkConfirmMessenger(){
+  var o = _bkLastOrder;
+  var msg = (L==='en'?'Hi, booking confirmation ':'Bonjour, confirmation r\u00e9servation ') + (o.ref||'') + ' - ' + (o.hours||3) + 'h - ' + (o.date||'') + ' ' + (o.time||'') + ' - ' + (o.price||0) + '$';
+  window.open('https://m.me/pontemtltaxi?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function trackDeposit(){
+  if(typeof gtag === 'function') gtag('event', 'deposit_click', {event_category:'conversion', event_label:'square_deposit_prive'});
+}
+
+var _bkDateInput = document.getElementById('bk-date');
+if(_bkDateInput){
+  var _today = new Date().toISOString().split('T')[0];
+  _bkDateInput.value = _today;
+  _bkDateInput.min = _today;
+}
+
+var _savedLang='fr';
+try{ _savedLang = localStorage.getItem('ponte_lang') || 'fr'; }catch(e){}
+setLang(_savedLang);
+</script>
+</body>
+</html>

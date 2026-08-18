@@ -503,6 +503,7 @@ var fr = {
   hr_row_d:"Minimum 3 heures",
   hr_note:"* Arr\u00eats multiples inclus \u00b7 Territoire\u00a0: agglom\u00e9ration de Montr\u00e9al \u00b7 Longue distance (Ottawa, Qu\u00e9bec, Mont-Tremblant) sur devis s\u00e9par\u00e9",
   hr_fleet_note:"Vous r\u00e9servez plusieurs v\u00e9hicules en m\u00eame temps\u00a0? Transferts de groupe et \u00e9v\u00e9nements corporatifs \u2014 conditions sp\u00e9ciales sur demande.",
+  hr_cta:"R\u00c9SERVER UN SERVICE PRIV\u00c9",
   bk_eyebrow:"R\u00c9SERVATION",
   bk_title:"R\u00e9servez votre <em>SUV Elite</em>",
   bk_lede:"Choisissez votre trajet, indiquez vos coordonn\u00e9es, et confirmez en un instant.",
@@ -582,6 +583,7 @@ var en = {
   hr_row_d:"3-hour minimum",
   hr_note:"* Multiple stops included \u00b7 Territory: Greater Montr\u00e9al \u00b7 Long distance (Ottawa, Qu\u00e9bec, Mont-Tremblant) quoted separately",
   hr_fleet_note:"Booking multiple vehicles at once? Group transfers and corporate events \u2014 special rates available on request.",
+  hr_cta:"BOOK A PRIVATE SERVICE",
   bk_eyebrow:"BOOKING",
   bk_title:"Book your <em>SUV Elite</em>",
   bk_lede:"Choose your route, enter your details, and confirm instantly.",
@@ -619,6 +621,7 @@ var en = {
 
 function setLang(lang){
   L = lang;
+  try{ localStorage.setItem('ponte_lang', lang); }catch(e){}
   document.documentElement.lang = lang;
   document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
   document.getElementById('btn-en').classList.toggle('active', lang==='en');
@@ -741,7 +744,16 @@ function trackDeposit(){
   if(typeof gtag === 'function') gtag('event', 'deposit_click', {event_category:'conversion', event_label:'square_deposit_elite'});
 }
 
-setLang('fr');
+var _bkDateInput = document.getElementById('bk-date');
+if(_bkDateInput){
+  var _today = new Date().toISOString().split('T')[0];
+  _bkDateInput.value = _today;
+  _bkDateInput.min = _today;
+}
+
+var _savedLang='fr';
+try{ _savedLang = localStorage.getItem('ponte_lang') || 'fr'; }catch(e){}
+setLang(_savedLang);
 
 
 </script>
