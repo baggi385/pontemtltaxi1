@@ -721,8 +721,8 @@ footer li a:hover{color:var(--y)}
 .ld-mode-banner.active{display:flex;align-items:center;gap:12px}
 .ld-mode-route{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:var(--y);flex:1}
 .ld-mode-close{cursor:pointer;font-size:18px;color:rgba(248,245,239,.4);flex-shrink:0;background:none;border:none;padding:0}
-.ld-veh-pick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
-.ld-veh-btn{padding:12px 8px;border:2px solid rgba(0,0,0,.1);border-radius:10px;background:rgba(0,0,0,.05);cursor:pointer;text-align:center;transition:.2s;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:1px;color:#111}
+.ld-veh-pick{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:14px}
+.ld-veh-btn{padding:12px 6px;border:2px solid rgba(0,0,0,.1);border-radius:10px;background:rgba(0,0,0,.05);cursor:pointer;text-align:center;transition:.2s;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:.5px;color:#111}
 .ld-veh-btn.sel{border-color:#111;background:#111;color:#F5C800}
 .ld-veh-btn .lv-icon{font-size:20px;display:block;margin-bottom:3px}
 .ld-veh-btn .lv-price{font-size:18px;display:block;margin-top:4px}
@@ -852,13 +852,14 @@ footer li a:hover{color:var(--y)}
 .dt-zones{display:flex;flex-direction:column;gap:12px}
 .dt-zone{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:.3s}
 .dt-zone:hover{border-color:rgba(245,200,0,.2);background:rgba(255,255,255,.05);transform:translateX(4px)}
+.dt-zone.selected{border-color:#F5C800;background:rgba(245,200,0,.08)}
 .dt-zone-left{display:flex;align-items:center;gap:14px}
 .dt-zone-icon{font-size:28px}
 .dt-zone-name{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;color:var(--w);margin-bottom:3px}
 .dt-zone-areas{font-size:11px;color:rgba(248,245,239,.35)}
-.dt-zone-right{text-align:right}
+.dt-zone-right{text-align:right;flex-shrink:0;min-width:110px}
+.dt-zone-van{font-size:11px;color:rgba(248,245,239,.3);margin-top:2px;white-space:nowrap}
 .dt-zone-price{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#F5C800}
-.dt-zone-van{font-size:11px;color:rgba(248,245,239,.3);margin-top:2px}
 .dt-cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
 .dt-btn-wa{background:rgba(37,211,102,.12);border:1.5px solid rgba(37,211,102,.3);color:#25d366;padding:14px 24px;border-radius:10px;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px;text-decoration:none;text-align:center;flex:1;transition:.2s}
 .dt-btn-ms{background:rgba(24,119,242,.12);border:1.5px solid rgba(24,119,242,.3);color:#4a90d9;padding:14px 24px;border-radius:10px;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px;text-decoration:none;text-align:center;flex:1;transition:.2s}
@@ -866,6 +867,7 @@ footer li a:hover{color:var(--y)}
   .dt-grid{grid-template-columns:1fr}
   .dt-section{padding:56px 20px}
   .dt-stats{gap:16px}
+  .ld-veh-pick{grid-template-columns:1fr 1fr}
 }
 
 /* TRUST BADGES */
@@ -1114,7 +1116,7 @@ footer li a:hover{color:var(--y)}
           </div>
         </div>
         <div class="ld-routes">
-          <div class="ld-route" onclick="ldBook('Ottawa Centre-Ville','350$','410$')" style="cursor:pointer">
+          <div class="ld-route" onclick="ldBook('Ottawa Centre-Ville','350$','440$','410$','820$')" style="cursor:pointer">
             <div class="ld-route-left">
               <div class="ld-route-icon">🏙</div>
               <div>
@@ -1128,8 +1130,9 @@ footer li a:hover{color:var(--y)}
               <div class="ld-price-van"><div class="ld-price-val">410$</div><div class="ld-price-lbl">Minivan</div></div>
               <div style="margin-left:8px;font-size:18px;opacity:.4">→</div>
             </div>
+            <div style="font-size:10px;color:rgba(245,200,0,.5);text-align:right;margin-top:2px;letter-spacing:.5px">+ Confort · Elite</div>
           </div>
-          <div class="ld-route" onclick="ldBook('Aéroport Ottawa YOW','350$','410$')" style="cursor:pointer">
+          <div class="ld-route" onclick="ldBook('Aéroport Ottawa YOW','350$','440$','410$','820$')" style="cursor:pointer">
             <div class="ld-route-left">
               <div class="ld-route-icon">✈️</div>
               <div>
@@ -1143,6 +1146,7 @@ footer li a:hover{color:var(--y)}
               <div class="ld-price-van"><div class="ld-price-val">410$</div><div class="ld-price-lbl">Minivan</div></div>
               <div style="margin-left:8px;font-size:18px;opacity:.4">→</div>
             </div>
+            <div style="font-size:10px;color:rgba(245,200,0,.5);text-align:right;margin-top:2px;letter-spacing:.5px">+ Confort · Elite</div>
           </div>
         </div>
       </div>
@@ -1158,7 +1162,7 @@ footer li a:hover{color:var(--y)}
           </div>
         </div>
         <div class="ld-routes">
-          <div class="ld-route" onclick="ldBook('Quebec Centre-Ville','420$','450$')" style="cursor:pointer">
+          <div class="ld-route" onclick="ldBook('Quebec Centre-Ville','420$','440$','440$','1050$')" style="cursor:pointer">
             <div class="ld-route-left">
               <div class="ld-route-icon">🏙</div>
               <div>
@@ -1172,8 +1176,9 @@ footer li a:hover{color:var(--y)}
               <div class="ld-price-van"><div class="ld-price-val">450$</div><div class="ld-price-lbl">Minivan</div></div>
               <div style="margin-left:8px;font-size:18px;opacity:.4">→</div>
             </div>
+            <div style="font-size:10px;color:rgba(245,200,0,.5);text-align:right;margin-top:2px;letter-spacing:.5px">+ Confort · Elite</div>
           </div>
-          <div class="ld-route" onclick="ldBook('Aéroport Quebec YQB','420$','450$')" style="cursor:pointer">
+          <div class="ld-route" onclick="ldBook('Aéroport Quebec YQB','420$','440$','440$','1050$')" style="cursor:pointer">
             <div class="ld-route-left">
               <div class="ld-route-icon">✈️</div>
               <div>
@@ -1187,6 +1192,7 @@ footer li a:hover{color:var(--y)}
               <div class="ld-price-van"><div class="ld-price-val">450$</div><div class="ld-price-lbl">Minivan</div></div>
               <div style="margin-left:8px;font-size:18px;opacity:.4">→</div>
             </div>
+            <div style="font-size:10px;color:rgba(245,200,0,.5);text-align:right;margin-top:2px;letter-spacing:.5px">+ Confort · Elite</div>
           </div>
         </div>
       </div>
@@ -1227,7 +1233,7 @@ footer li a:hover{color:var(--y)}
       </div>
 
       <div class="dt-zones">
-        <div class="dt-zone" onclick="window.open('https://wa.me/15147149576?text=Bonjour%20Pont%C3%A9%20Taxi%2C%20je%20suis%20%C3%A0%20Montr%C3%A9al%20Downtown%20et%20j%27ai%20besoin%20d%27un%20transfert%20vers%20YUL.','_blank')">
+        <div class="dt-zone" onclick="selectDowntownZone('Centre-Ville / Downtown',55,18,20,this)">
           <div class="dt-zone-left">
             <div class="dt-zone-icon">🏙</div>
             <div>
@@ -1238,6 +1244,32 @@ footer li a:hover{color:var(--y)}
           <div class="dt-zone-right">
             <div class="dt-zone-price">55$</div>
             <div class="dt-zone-van">75$ Minivan (jusqu'à 6 pass.)</div>
+          </div>
+        </div>
+        <div class="dt-zone" onclick="selectDowntownZone('Plateau-Mont-Royal',60,20,22,this)">
+          <div class="dt-zone-left">
+            <div class="dt-zone-icon">🎨</div>
+            <div>
+              <div class="dt-zone-name">Plateau-Mont-Royal</div>
+              <div class="dt-zone-areas">Mont-Royal · Saint-Denis · Laurier</div>
+            </div>
+          </div>
+          <div class="dt-zone-right">
+            <div class="dt-zone-price">60$</div>
+            <div class="dt-zone-van">80$ Minivan (jusqu'à 6 pass.)</div>
+          </div>
+        </div>
+        <div class="dt-zone" onclick="selectDowntownZone('Verdun / NDG',58,19,21,this)">
+          <div class="dt-zone-left">
+            <div class="dt-zone-icon">🌳</div>
+            <div>
+              <div class="dt-zone-name">Verdun / NDG</div>
+              <div class="dt-zone-areas">Wellington · Monkland · Sherbrooke O.</div>
+            </div>
+          </div>
+          <div class="dt-zone-right">
+            <div class="dt-zone-price">58$</div>
+            <div class="dt-zone-van">78$ Minivan (jusqu'à 6 pass.)</div>
           </div>
         </div>
         <div id="dt-traffic" style="background:rgba(245,200,0,.05);border:1px solid rgba(245,200,0,.1);border-radius:10px;padding:12px 16px;margin-top:4px;font-size:12px;color:rgba(248,245,239,.45);line-height:1.6">
@@ -1375,11 +1407,23 @@ footer li a:hover{color:var(--y)}
           <span class="lv-price" id="ld-price-std">250$</span>
           <span class="lv-note">1-2 pass.</span>
         </div>
+        <div class="ld-veh-btn" id="ld-vb-cft" onclick="ldPickVeh('cft')">
+          <span class="lv-icon">✨</span>
+          CONFORT
+          <span class="lv-price" id="ld-price-cft">—</span>
+          <span class="lv-note">1-4 pass.</span>
+        </div>
         <div class="ld-veh-btn" id="ld-vb-van" onclick="ldPickVeh('van')">
           <span class="lv-icon">🚐</span>
-          MINIVAN
+          XXL
           <span class="lv-price" id="ld-price-van">290$</span>
-          <span class="lv-note">3-6 pass.</span>
+          <span class="lv-note">1-6 pass.</span>
+        </div>
+        <div class="ld-veh-btn" id="ld-vb-elite" onclick="ldPickVeh('elite')">
+          <span class="lv-icon">🚙</span>
+          ELITE
+          <span class="lv-price" id="ld-price-elite">—</span>
+          <span class="lv-note">1-6 pass.</span>
         </div>
       </div>
 
@@ -1720,6 +1764,19 @@ function selectCity(c,el){
   },400);
 }
 
+function selectDowntownZone(name,base,km,min,el){
+  document.querySelectorAll('.dt-zone').forEach(function(x){x.classList.remove('selected');});
+  if(el)el.classList.add('selected');
+  S.city={name:name,base:base,km:km,min:min};
+  recalc();
+  var booking=document.getElementById('booking');
+  if(booking)booking.scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(function(){
+    var cf=document.getElementById('confirm-form');
+    if(cf)cf.scrollIntoView({behavior:'smooth',block:'start'});
+  },500);
+}
+
 /* SEARCH */
 function filterCities(q){
   var clr=document.getElementById('search-clear');
@@ -1961,7 +2018,7 @@ function submitBooking(){
   txt.textContent=L==='en'?'SENDING...':'ENVOI EN COURS...';
   spin.style.display='block';
   var veh=getVeh();
-  var ldPrice=ldMode?(ldVehPick==='van'?parseFloat(ldPriceVan):parseFloat(ldPriceStd)):0;
+  var ldPrice=ldMode?parseFloat(ldGetPrice()):0;
   var total=ldMode?ldPrice:(S.city?S.city.base+veh.add:veh.add);
   var ref='TS-'+Math.floor(1000+Math.random()*9000);S.ref=ref;
   var cityName=S.city?S.city.name:(ldMode?ldRouteName:'');
@@ -2072,7 +2129,7 @@ function downloadIcal(){
   var city=S.city?S.city.name:'Ville';
   var ref=S.ref||'TS-0000';
   var veh=getVeh();
-  var price=ldMode?(ldVehPick==='van'?ldPriceVan:ldPriceStd):(S.city?S.city.base+veh.add:0)+'$';
+  var price=ldMode?ldGetPrice():(S.city?S.city.base+veh.add:0)+'$';
   var name=document.getElementById('f-name').value||'';
   var dtS=date.replace(/-/g,'')+'T'+time+'00';
   var hr=String(parseInt(time.slice(0,2))+2).padStart(2,'0');
@@ -2306,7 +2363,7 @@ function toggleChat(){
 function openWA(){
   var name=(document.getElementById('f-name')||{value:''}).value||'';
   var city=S.city?S.city.name:'';
-  var price=ldMode?(ldVehPick==='van'?ldPriceVan:ldPriceStd):(document.getElementById('r-price')||{textContent:''}).textContent||'';
+  var price=ldMode?ldGetPrice():(document.getElementById('r-price')||{textContent:''}).textContent||'';
   var cityName=ldMode?ldRouteName:(S.city?S.city.name:'');
   var date=(document.getElementById('f-date')||{value:''}).value||'';
   var msg=L==='en'?"Hello Ponté Taxi, I would like to book a taxi to YUL.":"Bonjour Ponté Taxi, Je voudrais réserver un taxi vers YUL.";
@@ -2413,22 +2470,34 @@ function ldChg(type, delta){
 
 function ldUpdateNotes(){
   var notes=document.getElementById('f-notes');
-  var price=ldVehPick==='van'?ldPriceVan:ldPriceStd;
-  var vehName=ldVehPick==='van'?'Minivan':'Berline';
+  var price=ldGetPrice();
+  var vehNames={std:'Berline',cft:'Confort',van:'Grand Confort XXL',elite:'SUV Elite'};
+  var vehName=vehNames[ldVehPick]||'Berline';
   if(notes)notes.value='LONGUE DISTANCE: '+ldRouteName
     +'\n'+vehName+': '+price
     +'\nPassagers: '+ldPax+' | Bagages: '+ldBag;
 }
 var ldVehPick = 'std';
 var ldPriceStd = '250$';
+var ldPriceCft = '260$';
 var ldPriceVan = '290$';
+var ldPriceElite = '450$';
 var ldRouteName = '';
 
-function ldBook(route, priceBerline, priceMinivan){
+function ldGetPrice(){
+  if(ldVehPick==='cft') return ldPriceCft;
+  if(ldVehPick==='van') return ldPriceVan;
+  if(ldVehPick==='elite') return ldPriceElite;
+  return ldPriceStd;
+}
+
+function ldBook(route, priceBerline, priceConfort, priceMinivan, priceElite){
   ldMode = true;
   ldRouteName = route;
   ldPriceStd = priceBerline;
+  ldPriceCft = priceConfort;
   ldPriceVan = priceMinivan;
+  ldPriceElite = priceElite;
   ldVehPick = 'std';
 
   // Show LD banner
@@ -2440,24 +2509,32 @@ function ldBook(route, priceBerline, priceMinivan){
   // Show LD vehicle picker with prices
   var vp = document.getElementById('ld-veh-pick');
   var ps = document.getElementById('ld-price-std');
+  var pc = document.getElementById('ld-price-cft');
   var pv = document.getElementById('ld-price-van');
+  var pe = document.getElementById('ld-price-elite');
   var dep = document.getElementById('ld-deposit');
   if(vp)vp.style.display='grid';
   var ldc=document.getElementById('ld-counters');
   if(ldc)ldc.style.display='grid';
   if(ps)ps.textContent=priceBerline;
+  if(pc)pc.textContent=priceConfort;
   if(pv)pv.textContent=priceMinivan;
+  if(pe)pe.textContent=priceElite;
   if(dep)dep.classList.add('active');
 
   // Reset vehicle buttons
   var vbs=document.getElementById('ld-vb-std');
+  var vbc=document.getElementById('ld-vb-cft');
   var vbv=document.getElementById('ld-vb-van');
+  var vbe=document.getElementById('ld-vb-elite');
   if(vbs)vbs.classList.add('sel');
+  if(vbc)vbc.classList.remove('sel');
   if(vbv)vbv.classList.remove('sel');
+  if(vbe)vbe.classList.remove('sel');
 
   // Pre-fill notes
   var notes = document.getElementById('f-notes');
-  if(notes)notes.value='LONGUE DISTANCE: '+route+' | Berline: '+priceBerline+' / Minivan: '+priceMinivan;
+  if(notes)notes.value='LONGUE DISTANCE: '+route+' | Berline: '+priceBerline+' / Confort: '+priceConfort+' / XXL: '+priceMinivan+' / Elite: '+priceElite;
 
   // Show confirm form
   var cf = document.getElementById('confirm-form');
@@ -2475,13 +2552,14 @@ function ldBook(route, priceBerline, priceMinivan){
 function ldPickVeh(t){
   ldVehPick = t;
   var vbs=document.getElementById('ld-vb-std');
+  var vbc=document.getElementById('ld-vb-cft');
   var vbv=document.getElementById('ld-vb-van');
+  var vbe=document.getElementById('ld-vb-elite');
   if(vbs)vbs.classList.toggle('sel',t==='std');
+  if(vbc)vbc.classList.toggle('sel',t==='cft');
   if(vbv)vbv.classList.toggle('sel',t==='van');
+  if(vbe)vbe.classList.toggle('sel',t==='elite');
   // Update notes
-  var notes=document.getElementById('f-notes');
-  var price = t==='van' ? ldPriceVan : ldPriceStd;
-  var vehName = t==='van' ? 'Minivan' : 'Berline';
   ldUpdateNotes();
 }
 
