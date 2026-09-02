@@ -1179,6 +1179,19 @@ function recalc(){
   if(!S.city)return;
   var veh=getVeh();
   var base=S.city.base,total=base+veh.add;
+
+  // Mont-Tremblant uses fixed tier prices from the Confort/XXL/Elite pages
+  // instead of the standard linear surcharge (+10/+20/+95), because the
+  // real long-distance rates are not proportional to the base fare.
+  var isTremblant = (S.city.name === 'Mont-Tremblant');
+  var mtCft = 280, mtXxl = 290, mtElite = 550;
+  if(isTremblant){
+    if(veh.isVan) total = mtXxl;
+    else if(veh.icon==='🚙') total = mtElite;
+    else if(veh.isPremium) total = mtCft;
+    else total = base; // Berline stays at 220$
+  }
+
   if(S.babySeat){/* free */}
   if(S.roundTrip)total=total*2-Math.round(total*0.1);
 
@@ -1199,9 +1212,9 @@ function recalc(){
   var vtpV=document.getElementById('vtp-van');
   var vtpE=document.getElementById('vtp-elite');
   if(vtpS)vtpS.textContent=base+'$';
-  if(vtpC)vtpC.textContent=(base+10)+'$';
-  if(vtpV)vtpV.textContent=(base+20)+'$';
-  if(vtpE)vtpE.textContent=(base+95)+'$';
+  if(vtpC)vtpC.textContent=(isTremblant?mtCft:(base+10))+'$';
+  if(vtpV)vtpV.textContent=(isTremblant?mtXxl:(base+20))+'$';
+  if(vtpE)vtpE.textContent=(isTremblant?mtElite:(base+95))+'$';
 
   var _rc=document.getElementById('r-city');if(_rc)_rc.textContent=S.city.name;
   var _rd=document.getElementById('r-dist');if(_rd)_rd.textContent=S.city.km+' km';
@@ -1327,6 +1340,12 @@ function submitBooking(){
 
   var veh=getVeh();
   var total=S.city.base+veh.add;
+  if(S.city.name === 'Mont-Tremblant'){
+    if(veh.isVan) total = 290;
+    else if(veh.icon==='🚙') total = 550;
+    else if(veh.isPremium) total = 280;
+    else total = S.city.base;
+  }
   if(S.roundTrip)total=total*2-Math.round(total*0.1);
   var ref='TSN-'+Math.floor(1000+Math.random()*9000);S.ref=ref;
   var cityName=S.city.name;
