@@ -113,6 +113,7 @@ section{padding:80px 24px}
 .bk-channels{display:flex;gap:8px;margin-bottom:16px}
 .bk-channels button{flex:1;padding:11px;border-radius:2px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:1px;cursor:pointer;border:1.5px solid rgba(37,211,102,.25);background:rgba(37,211,102,.15)!important;color:#25d366}
 .bk-channels button.fb{border-color:rgba(24,119,242,.3);background:rgba(24,119,242,.18)!important;color:#4a90d9}
+.bk-channels button.sms{border-color:rgba(245,200,0,.35);background:rgba(245,200,0,.12)!important;color:var(--y)}
 .bk-ref{text-align:center;padding:14px;background:rgba(245,200,0,.04)!important;border:1px solid var(--line);border-radius:2px;margin-bottom:14px}
 .bk-ref-lbl{font-size:10px;letter-spacing:2px;color:var(--wdd);margin-bottom:4px}
 .bk-ref-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--y);letter-spacing:2px}
@@ -301,6 +302,7 @@ footer .f-copy{font-size:11px;color:var(--wdd)}
     <p data-i="bk_ov_sub">Votre chauffeur sera bientôt assigné. Confirmez rapidement via l'un des canaux ci-dessous.</p>
     <div class="bk-channels">
       <button onclick="bkConfirmMessenger()" class="fb" type="button" data-i="bk_ov_fb">📘 MESSENGER</button>
+      <button onclick="bkConfirmSMS()" class="sms" type="button" data-i="bk_ov_sms">📱 SMS</button>
       <button onclick="bkConfirmWhatsApp()" type="button" data-i="bk_ov_wa">💬 WHATSAPP</button>
     </div>
     <div class="bk-ref">
@@ -524,6 +526,7 @@ var fr = {
   bk_ov_title:"Merci pour votre r\u00e9servation\u00a0!",
   bk_ov_sub:"Votre chauffeur sera bient\u00f4t assign\u00e9. Confirmez rapidement via l\u2019un des canaux ci-dessous.",
   bk_ov_fb:"\uD83D\uDCD8 MESSENGER",
+  bk_ov_sms:"\uD83D\uDCF1 SMS",
   bk_ov_wa:"\uD83D\uDCAC WHATSAPP",
   bk_ov_ref:"NUM\u00c9RO DE R\u00c9SERVATION",
   bk_ov_note:"Tarif fixe \u00b7 SUV Elite",
@@ -604,6 +607,7 @@ var en = {
   bk_ov_title:"Thank you for your booking!",
   bk_ov_sub:"Your chauffeur will be assigned shortly. Confirm quickly via one of the channels below.",
   bk_ov_fb:"\uD83D\uDCD8 MESSENGER",
+  bk_ov_sms:"\uD83D\uDCF1 SMS",
   bk_ov_wa:"\uD83D\uDCAC WHATSAPP",
   bk_ov_ref:"BOOKING NUMBER",
   bk_ov_note:"Fixed rate \u00b7 SUV Elite",
@@ -732,6 +736,22 @@ function bkConfirmWhatsApp(){
   ];
   var msg = lines.filter(function(l){return l!==null&&l!==undefined;}).join('\n');
   window.open('https://wa.me/15147149576?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function bkConfirmSMS(){
+  var o = _bkLastOrder;
+  var lines = [
+    '\uD83D\uDE95 SUV ELITE - ' + (o.ref||''),
+    '\uD83D\uDCCB ' + (o.name||'') + ' | ' + (o.tel||''),
+    '\uD83D\uDCCD ' + (o.route||''),
+    '\uD83D\uDCC5 ' + (o.date||'') + ' - ' + (o.time||'') + 'h',
+    o.flight ? '\u2708\uFE0F Vol: ' + o.flight : null,
+    '\uD83D\uDCB0 ' + (o.price||0) + '$',
+    '---',
+    '\u2705 Confirmer: OUI / NON'
+  ];
+  var msg = lines.filter(function(l){return l!==null&&l!==undefined;}).join('\n');
+  window.open('sms:+15147149576?body=' + encodeURIComponent(msg), '_blank');
 }
 
 function bkConfirmMessenger(){

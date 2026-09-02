@@ -838,6 +838,20 @@ footer li a:hover{color:var(--y)}
 
 /* DOWNTOWN SECTION */
 .dt-section{padding:80px 32px;background:linear-gradient(180deg,#0a0a0a 0%,#0d0d0d 100%);border-top:1px solid rgba(245,200,0,.08)}
+.nord-banner{background:linear-gradient(135deg,rgba(14,165,233,.08),rgba(139,92,246,.06));border-top:1px solid rgba(14,165,233,.15);border-bottom:1px solid rgba(14,165,233,.15);padding:56px 32px}
+.nord-banner-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.nord-banner-left{flex:1;min-width:260px}
+.nord-banner-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.25);color:#38bdf8;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:16px}
+.nord-banner-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3.5vw,36px);letter-spacing:1px;color:var(--w);line-height:1.15;margin-bottom:10px}
+.nord-banner-title span.nord-hl{color:#38bdf8}
+.nord-banner-sub{font-size:14px;color:rgba(248,245,239,.5);line-height:1.6;max-width:440px}
+.nord-banner-btn{flex-shrink:0;background:#0ea5e9;color:#000;padding:16px 32px;border-radius:8px;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.2s;white-space:nowrap}
+.nord-banner-btn:hover{background:#38bdf8;transform:translateY(-2px)}
+@media(max-width:768px){
+  .nord-banner{padding:40px 20px}
+  .nord-banner-inner{flex-direction:column;text-align:center}
+  .nord-banner-btn{width:100%;justify-content:center}
+}
 .dt-inner{max-width:1100px;margin:0 auto}
 .dt-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px;align-items:start}
 .dt-info{display:flex;flex-direction:column;gap:20px}
@@ -1000,6 +1014,17 @@ footer li a:hover{color:var(--y)}
   <div class="hr">
     <div class="big-taxi">🚕</div>
     <div class="spin-badge"><div class="spin-num">24/7</div>DISPONIBLE<br>TOUJOURS</div>
+  </div>
+</section>
+
+<section class="nord-banner">
+  <div class="nord-banner-inner">
+    <div class="nord-banner-left">
+      <div class="nord-banner-tag">🏔 <span data-i="nord_tag">Couronne Nord & Laurentides</span></div>
+      <div class="nord-banner-title"><span data-i="nord_title1">Vous partez du</span> <span class="nord-hl" data-i="nord_hl">Nord</span> <span data-i="nord_title2">de Montréal ?</span></div>
+      <p class="nord-banner-sub" data-i="nord_sub">Laval, Blainville, Saint-Jérôme, Mont-Tremblant et plus — découvrez Ponté Nord, notre service dédié aux Laurentides.</p>
+    </div>
+    <a href="/nord.html" class="nord-banner-btn" data-i="nord_btn">🏔 VOIR PONTÉ NORD →</a>
   </div>
 </section>
 
@@ -1617,8 +1642,9 @@ footer li a:hover{color:var(--y)}
       <!-- CHANNEL BUTTONS -->
        <div style="text-align:center;margin:6px 0 6px;font-size:11px;color:rgba(248,245,239,.45);letter-spacing:1px;font-family:'DM Sans',sans-serif" data-i="cc_channel_lbl">Recevez votre confirmation via</div>
        <div style="display:flex;gap:8px;margin-bottom:12px">
-         <button onclick="confirmViaMessenger()" type="button" style="flex:1;padding:11px;border-radius:9px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1px;cursor:pointer;border:1.5px solid rgba(24,119,242,.3);background:rgba(24,119,242,.1);color:#4a90d9">📘 MESSENGER</button>
-         <button onclick="confirmViaWhatsApp()" type="button" style="flex:1;padding:11px;border-radius:9px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1px;cursor:pointer;border:1.5px solid rgba(37,211,102,.25);background:rgba(37,211,102,.08);color:#25d366">💬 WHATSAPP</button>
+         <button onclick="confirmViaMessenger()" type="button" style="flex:1;padding:11px;border-radius:9px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:1px;cursor:pointer;border:1.5px solid rgba(24,119,242,.3);background:rgba(24,119,242,.1);color:#4a90d9">📘 MESSENGER</button>
+         <button onclick="confirmViaSMS()" type="button" style="flex:1;padding:11px;border-radius:9px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:1px;cursor:pointer;border:1.5px solid rgba(245,200,0,.3);background:rgba(245,200,0,.08);color:var(--y)">📱 SMS</button>
+         <button onclick="confirmViaWhatsApp()" type="button" style="flex:1;padding:11px;border-radius:9px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:1px;cursor:pointer;border:1.5px solid rgba(37,211,102,.25);background:rgba(37,211,102,.08);color:#25d366">💬 WHATSAPP</button>
        </div>
       <div class="cc-ref"><div class="cc-ref-lbl" data-i="cc_ref_lbl">Numéro de réservation</div><div class="cc-ref-num" id="cc-ref">TS-0000</div></div>
       <div id="cc-rows"></div>
@@ -1961,9 +1987,10 @@ function recalc(){
   var _rp=document.getElementById('r-price');if(_rp)_rp.textContent=total+'$';
   var _rn=document.getElementById('r-note');
   if(_rn){
-    if(veh.isPremium&&veh.icon==='🚙')_rn.textContent=base+'$ + 95$ (SUV Elite) = '+total+'$ \u2014 SUV Elite';
-    else if(veh.isVan)_rn.textContent=base+'$ + 20$ (minivan) = '+total+'$ \u2014 Minivan';
-    else _rn.textContent=(L==='en'?'Fixed rate - '+base+'$ - Berline':'Tarif fixe - '+base+'$ - Berline');
+    if(veh.isPremium&&veh.icon==='🚙')_rn.textContent=L==='en'?'Fixed rate - SUV Elite':'Tarif fixe - SUV Elite';
+    else if(veh.isVan)_rn.textContent=L==='en'?'Fixed rate - Grand Confort (XXL)':'Tarif fixe - Grand Confort (XXL)';
+    else if(veh.isPremium)_rn.textContent=L==='en'?'Fixed rate - Confort':'Tarif fixe - Confort';
+    else _rn.textContent=(L==='en'?'Fixed rate - Berline':'Tarif fixe - Berline');
   }
   if(rb)rb.style.display='block';if(cf)cf.style.display='block';
   calcTravel();
@@ -2092,6 +2119,23 @@ function confirmViaWhatsApp(){
   window.open('https://wa.me/15147149576?text=' + encodeURIComponent(msg), '_blank');
 }
 
+function confirmViaSMS(){
+  var o = _lastOrder;
+  var lines = [
+    '\uD83D\uDE95 NOUVEAU TRAJET - ' + (o.ref||''),
+    '\uD83D\uDCCB ' + (o.name||'') + ' | ' + (o.tel||''),
+    '\uD83D\uDCCD ' + (o.city||'') + ' \u2192 YUL',
+    '\uD83D\uDE97 ' + (o.veh||'') + ' | ' + (o.pax||1) + ' pass.',
+    '\uD83D\uDCC5 ' + (o.date||'') + ' - ' + (o.time||'') + 'h',
+    o.flight ? '\u2708\uFE0F Vol: ' + o.flight : null,
+    '\uD83D\uDCB0 ' + (o.total||0) + '$',
+    '---',
+    '\u2705 Confirmer: OUI / NON'
+  ];
+  var msg = lines.filter(function(l){return l!==null&&l!==undefined;}).join('\n');
+  window.open('sms:+15147149576?body=' + encodeURIComponent(msg), '_blank');
+}
+
 
 function newBooking(){
   closeOverlay();
@@ -2143,6 +2187,12 @@ function downloadIcal(){
 /* i18n */
 var I18N=(function(){
 var fr={
+  nord_tag:"Couronne Nord \u0026 Laurentides",
+  nord_title1:"Vous partez du",
+  nord_hl:"Nord",
+  nord_title2:"de Montréal ?",
+  nord_sub:"Laval, Blainville, Saint-Jérôme, Mont-Tremblant et plus — découvrez Ponté Nord, notre service dédié aux Laurentides.",
+  nord_btn:"🏔 VOIR PONTÉ NORD →",
   nav_svc:"Services",
   cr_sms_name:"SMS / iMESSAGE",cr_sms_desc:"Envoyez un message texte depuis votre téléphone. Simple et instantané.",
   cr_wa_name:"WHATSAPP",cr_wa_desc:"Chattez avec nous en temps réel. Envoyez votre localisation ou photos de bagages.",
@@ -2238,6 +2288,12 @@ var fr={
   footer_copy:"\u00a9 2026 Ponté Taxi \u2014 Tous droits r\u00e9serv\u00e9s"};
 
 var en={
+  nord_tag:"North Crown \u0026 Laurentians",
+  nord_title1:"Departing from the",
+  nord_hl:"North",
+  nord_title2:"of Montreal?",
+  nord_sub:"Laval, Blainville, Saint-Jérôme, Mont-Tremblant and more — discover Ponté Nord, our dedicated Laurentians service.",
+  nord_btn:"🏔 VIEW PONTÉ NORD →",
   nav_svc:"Services",nav_routes:"Routes",nav_book:"Book",nav_call:"\uD83D\uDCDE Call Us",nav_mariage:"Wedding",nav_elite:"SUV Elite",nav_xxl:"Grand Confort",nav_confort:"Confort",nav_soon:"(coming soon)",
   tag:"South Shore \u2192 YUL Airport",h1it:"your trusted driver",
   sub:"Airport transfers from the South Shore to Montreal-Trudeau YUL. Longueuil, Brossard, Chambly and more. Available 24/7.",
