@@ -50,7 +50,7 @@
     "@type": "PostalAddress",
     "addressRegion": "QC",
     "addressCountry": "CA",
-    "addressLocality": "Longueuil"
+    "addressLocality": "LaSalle"
   },
   "geo": {
     "@type": "GeoCoordinates",
@@ -1245,7 +1245,7 @@ footer li a:hover{color:var(--y)}
       <div class="dt-info">
         <div class="dt-tag">🏙 Île de Montréal → YUL</div>
         <div class="dt-title">MONTRÉAL<br><span>DOWNTOWN</span></div>
-        <div class="dt-desc" data-i="dt_desc">Vous êtes sur l'île de Montréal et devez rejoindre l'aéroport Trudeau? PonteMTL assure votre transfert depuis le centre-ville, le Plateau, Verdun, NDG et plus — prix fixe, sans compteur.</div>
+        <div class="dt-desc" data-i="dt_desc">Vous êtes sur l'île de Montréal et devez rejoindre l'aéroport Trudeau? Ponté Taxi assure votre transfert depuis le centre-ville, le Plateau, Verdun, NDG et plus — prix fixe, sans compteur.</div>
         <div class="dt-stats">
           <div class="dt-stat"><div class="dt-stat-n">~20</div><div class="dt-stat-l">minutes</div></div>
           <div class="dt-stat"><div class="dt-stat-n">18km</div><div class="dt-stat-l">distance</div></div>
@@ -1405,7 +1405,6 @@ footer li a:hover{color:var(--y)}
     </div>
     
     
-      </div>
       <div class="tw-grid">
         <div class="twb"><div class="twlbl" data-i="tw_est">Temps estimé</div><div class="twval" id="tw-time">—</div><div class="twsub">min</div></div>
         <div class="twb"><div class="twlbl" data-i="tw_range">Fourchette</div><div class="twval" id="tw-range" style="font-size:18px;padding-top:5px">—</div><div class="twsub">min</div></div>
@@ -1631,7 +1630,7 @@ footer li a:hover{color:var(--y)}
   </div>
   <div><h4 data-i="ft_svc">Services</h4><ul><li><a href="/#booking">Aéroport YUL</a></li><li><a href="/seo/taxi-longueuil-aeroport-yul.html">Rive-Sud</a></li><li><a href="/#booking">Corporatif</a></li><li><a href="/#booking">Groupes</a></li></ul></div>
   <div><h4 data-i="ft_villes">Villes</h4><ul><li><a href="/seo/taxi-longueuil-aeroport-yul.html">Longueuil</a></li><li><a href="/seo/taxi-brossard-aeroport-yul.html">Brossard</a></li><li><a href="/seo/taxi-boucherville-aeroport-yul.html">Boucherville</a></li><li><a href="/seo/taxi-mont-saint-hilaire-aeroport-yul.html">Mont-Saint-Hilaire</a></li><li><a href="/seo/taxi-saint-hyacinthe-aeroport-yul.html">Saint-Hyacinthe</a></li></ul></div>
-  <div><h4 data-i="ft_contact">Contact</h4><ul><li><a href="tel:+15147149576">📞 (514) 714-9576</a></li><li><a href="mailto:info@pontemtl.taxi">✉ info@pontemtl.taxi</a></li><li><a href="https://maps.google.com/?q=Brossard,QC" target="_blank">📍 Rive-Sud, QC</a></li><li><a href="/#booking" data-i="ft_book">Réserver en ligne</a></li></ul></div>
+  <div><h4 data-i="ft_contact">Contact</h4><ul><li><a href="tel:+15147149576">📞 (514) 714-9576</a></li><li><a href="mailto:info@pontetaxi.ca">✉ info@pontetaxi.ca</a></li><li><a href="https://maps.google.com/?q=LaSalle,Montreal,QC" target="_blank">📍 LaSalle, Montréal, QC</a></li><li><a href="/#booking" data-i="ft_book">Réserver en ligne</a></li></ul></div>
 </footer>
 <div class="copy" data-i="footer_copy">© 2026 Ponté Taxi — Tous droits réservés</div>
 
@@ -1657,7 +1656,6 @@ footer li a:hover{color:var(--y)}
        </div>
     </div>
   </div>
-</div>
 
 <div class="chat-float">
   <div class="chat-group hidden" id="chat-group">
@@ -2178,7 +2176,7 @@ function downloadIcal(){
   var dtS=date.replace(/-/g,'')+'T'+time+'00';
   var hr=String(parseInt(time.slice(0,2))+2).padStart(2,'0');
   var dtE=date.replace(/-/g,'')+'T'+hr+time.slice(2)+'00';
-  var ical=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//PonteMTL//FR','BEGIN:VEVENT','UID:'+ref+'@pontemtl.taxi','DTSTART:'+dtS,'DTEND:'+dtE,'SUMMARY:Ponté Taxi - '+city+' to YUL ('+ref+')','DESCRIPTION:'+name+' | '+price+' | (514) 714-9576','LOCATION:'+city+', QC to YUL Airport','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  var ical=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//PonteTaxi//FR','BEGIN:VEVENT','UID:'+ref+'@pontemtl.taxi','DTSTART:'+dtS,'DTEND:'+dtE,'SUMMARY:Ponté Taxi - '+city+' to YUL ('+ref+')','DESCRIPTION:'+name+' | '+price+' | (514) 714-9576','LOCATION:'+city+', QC to YUL Airport','END:VEVENT','END:VCALENDAR'].join('\r\n');
   var a=document.createElement('a');
   a.href=URL.createObjectURL(new Blob([ical],{type:'text/calendar'}));
   a.download='pontemtl-'+ref+'.ics';a.click();
@@ -2264,7 +2262,7 @@ var fr={
   cr_bottom2:"\u2014 disponible 24h/24, 7j/7",
   cr_bottom3:"Ou r\u00e9servez en ligne via notre",
   cr_bottom_link:"formulaire de r\u00e9servation",
-  dt_desc:"Vous \u00eates sur l'\u00eele de Montr\u00e9al et devez rejoindre l'a\u00e9roport Trudeau? PonteMTL assure votre transfert depuis le centre-ville, le Plateau, Verdun, NDG et plus \u2014 prix fixe, sans compteur.",
+  dt_desc:"Vous \u00eates sur l'\u00eele de Montr\u00e9al et devez rejoindre l'a\u00e9roport Trudeau? Ponté Taxi assure votre transfert depuis le centre-ville, le Plateau, Verdun, NDG et plus \u2014 prix fixe, sans compteur.",
   dt_available:"disponible",
   faq_lbl:"Questions fr\u00e9quentes",
   faq_title1:"ON R\u00c9POND \u00c0", faq_title2:"VOS QUESTIONS",
@@ -2358,7 +2356,7 @@ var en={
   cr_bottom2:"\u2014 available 24/7",
   cr_bottom3:"Or book online via our",
   cr_bottom_link:"booking form",
-  dt_desc:"Are you on the island of Montreal and need to reach Trudeau Airport? PonteMTL provides your transfer from downtown, the Plateau, Verdun, NDG and more \u2014 fixed price, no meter.",
+  dt_desc:"Are you on the island of Montreal and need to reach Trudeau Airport? Ponté Taxi provides your transfer from downtown, the Plateau, Verdun, NDG and more \u2014 fixed price, no meter.",
   dt_available:"available",
   faq_lbl:"Frequently asked questions",
   faq_title1:"WE ANSWER", faq_title2:"YOUR QUESTIONS",
@@ -2443,7 +2441,7 @@ var REVIEWS_DATA=[
   {name:"Jean-Fran\u00e7ois L.",initial:'J',color:'#3498db',stars:5,date:'Il y a 5 jours',
    text:"Excellent service pour notre vol matinal \u00e0 5h30. Chauffeur tr\u00e8s professionnel, a suivi notre vol retard\u00e9 sans frais suppl\u00e9mentaires.",trip:'Brossard → YUL'},
   {name:'Sophie M.',initial:'S',color:'#2ecc71',stars:5,date:'Il y a 1 semaine',
-   text:"J'utilise PonteMTL r\u00e9guli\u00e8rement pour mes voyages d'affaires. Toujours fiable, toujours \u00e0 l'heure. R\u00e9servation WhatsApp super facile!",trip:"Chambly \u2192 YUL"},
+   text:"J'utilise Pont\u00e9 Taxi r\u00e9guli\u00e8rement pour mes voyages d'affaires. Toujours fiable, toujours \u00e0 l'heure. R\u00e9servation WhatsApp super facile!",trip:"Chambly \u2192 YUL"},
   {name:'Robert T.',initial:'R',color:'#f39c12',stars:5,date:'Il y a 2 semaines',
    text:"Meilleur service taxi de la Rive-Sud! Prix correct, chauffeur courtois. Si\u00e8ge b\u00e9b\u00e9 gratuit comme promis. Merci!",trip:'Mont-Saint-Hilaire → YUL'},
   {name:'Isabelle G.',initial:'I',color:'#9b59b6',stars:5,date:'Il y a 3 semaines',
